@@ -20,7 +20,17 @@ Route::get('/', function () {
 Route::get('/csstesting', function () {
     return view('twcss');
 });
+Route::get('/landlord', function () {
+    return view('landlord');
+});
 
+Route::get('/noofproperty', function () {
+    return view('noofproperty');
+});
+
+Route::get('/property', function () {
+    return view('property');
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
