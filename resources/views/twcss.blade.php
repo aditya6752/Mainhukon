@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    
 </head>
 <body>
 <section class="text-gray-600 body-font">
@@ -63,5 +65,6 @@
     <button class="flex mx-auto mt-20 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button</button>
   </div>
 </section>
+<script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
