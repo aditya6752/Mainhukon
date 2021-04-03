@@ -32,6 +32,15 @@ Route::get('/property', function () {
     return view('property');
 });
 
+Route::get('/landlordmainpage', function () {
+    return view('landlordmainpage');
+});
+
+Route::get('/myproperties', function () {
+    return view('myproperties');
+});
+
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
