@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Auth\PropertyController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,16 +24,14 @@ Route::get('/landlord', function () {
     return view('landlord');
 });
 
-Route::get('/noofproperty', function () {
-    return view('noofproperty');
-});
+Route::get('/noofproperty',[PropertyController::class, 'initialpage'])->middleware(['auth'])->name('post.setup');
 
-Route::get('/property', function () {
-    return view('property');
-});
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::post('/property',[PropertyController::class, 'getthenumber'])->middleware(['auth'])->name('post.getnumber');
+
+Route::post('/propertydetails/{no}',[PropertyController::class, 'getthedetails'])->middleware(['auth'])->name('post.getthedetails');
+
+Route::get('/dashboard',[PropertyController::class, 'dashboard'])->middleware(['auth'])->name('dashboard');
+
 
 require __DIR__.'/auth.php';
