@@ -33,5 +33,19 @@ Route::post('/propertydetails/{no}',[PropertyController::class, 'getthedetails']
 
 Route::get('/dashboard',[PropertyController::class, 'dashboard'])->middleware(['auth'])->name('dashboard');
 
+Route::get('/myproperties',[PropertyController::class, 'landlordlanding'])->middleware(['auth'])->name('landlord.dashboard');
+
+Route::get('/editpropertydetail/{PID}',[PropertyController::class, 'editpropertydetails'])->middleware(['auth'])->name('landlord.editproperty');
+Route::post('/update/{id}',[PropertyController::class, 'updatepropertydetails'])->middleware(['auth'])->name('landlord.updateproperty');
+Route::get('/addproperty/{PID}',[PropertyController::class, 'addproperty'])->middleware(['auth'])->name('landlord.editproperty');
+Route::post('/addpropertydetails/{PID}',[PropertyController::class, 'addthedetails'])->middleware(['auth'])->name('landlord.editproperty');
+
+
+Route::get('/landlordmainpage', function () {
+    return view('landlordmainpage');
+});
+
+
+
 
 require __DIR__.'/auth.php';
