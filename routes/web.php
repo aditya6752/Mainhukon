@@ -35,6 +35,10 @@ Route::get('/landlordmainpage', function () {
 });
 
 
+Route::get('/transfer', function () {
+    return view('transfer');
+});
+
 
 
 require __DIR__.'/auth.php';
