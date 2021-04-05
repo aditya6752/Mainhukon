@@ -40,6 +40,10 @@ Route::get('/myproperties', function () {
     return view('myproperties');
 });
 
+Route::get('/transfer', function () {
+    return view('transfer');
+});
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
