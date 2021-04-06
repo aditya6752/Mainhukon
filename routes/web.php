@@ -42,6 +42,12 @@ Route::get('/transfer', function () {
     return view('transfer');
 });
 
+Route::get('/endproperty', function () {
+    return view('endproperty');
+});
 
+Route::get('/startproperty', function () {
+    return view('startproperty');
+});
 
 require __DIR__.'/auth.php';
