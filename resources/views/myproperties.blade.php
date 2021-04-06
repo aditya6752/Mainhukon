@@ -11,9 +11,19 @@
       <div class="p-4 md:w-1/3 ">
         <div class="flex rounded-lg h-full bg-gray-100 p-8 flex-col">
           <div class="flex items-center mb-3">
-            <h2 class="text-gray-900 mt-8 text-lg title-font font-medium">Property {{$property->PID}}</h2>
-            <button class="ml-10 flex mx-auto mt-8 text-white bg-green-500 border-0 py-2 px-8 focus:outline-none hover:bg-green-700 rounded text-lg"> <a href="/editpropertydetail/{{$property->PID}}"> EDIT</a></button>
-            <button class="ml-5 flex mx-auto mt-8 text-white bg-red-500 border-0 py-2 px-8 focus:outline-none hover:bg-red-700 rounded text-lg"> <a href="/transfer/{{$property->id}}"> TRANSFER</a></button>
+            <h2 class="text-gray-900 mt-8 text-lg title-font font-medium">
+              Property {{$property->PID}}
+            </h2>
+            <a href="/editpropertydetail/{{$property->PID}}">
+              <button class="ml-10 flex mx-auto mt-8 text-white bg-green-500 border-0 py-2 px-8 focus:outline-none hover:bg-green-700 rounded text-lg">  
+                EDIT
+              </button>
+            </a>
+            <a href="/transfer/{{$property->id}}">
+              <button class="ml-5 flex mx-auto mt-8 text-white bg-red-500 border-0 py-2 px-8 focus:outline-none hover:bg-red-700 rounded text-lg">  
+                TRANSFER
+              </button>
+            </a>
           </div>
           <div class="flex">
             <p class="leading-relaxed text-base">{{$property->address}}</p>
@@ -30,8 +40,8 @@
       <a href="/addproperty">
         <button class="flex mx-auto mt-16 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Add Property</button>
       </a>
-  </div>
     </div>
+  </div>
   </div>
 </section>
 </x-app-layout>
