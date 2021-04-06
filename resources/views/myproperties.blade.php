@@ -13,7 +13,7 @@
           <div class="flex items-center mb-3">
             <h2 class="text-gray-900 mt-8 text-lg title-font font-medium">Property {{$property->PID}}</h2>
             <button class="ml-10 flex mx-auto mt-8 text-white bg-green-500 border-0 py-2 px-8 focus:outline-none hover:bg-green-700 rounded text-lg"> <a href="/editpropertydetail/{{$property->PID}}"> EDIT</a></button>
-            <button class="ml-5 flex mx-auto mt-8 text-white bg-red-500 border-0 py-2 px-8 focus:outline-none hover:bg-red-700 rounded text-lg"> <a href="/editpropertydetail/{{$property->PID}}"> TRANSFER</a></button>
+            <button class="ml-5 flex mx-auto mt-8 text-white bg-red-500 border-0 py-2 px-8 focus:outline-none hover:bg-red-700 rounded text-lg"> <a href="/transfer/{{$property->id}}"> TRANSFER</a></button>
           </div>
           <div class="flex">
             <p class="leading-relaxed text-base">{{$property->address}}</p>

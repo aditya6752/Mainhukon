@@ -79,7 +79,28 @@ class PropertyController extends Controller
         $property -> username = Auth::user()-> username;
         $property -> save();
         $n1 = "You Have successfully setup for landlord controls";
-        return redirect('/dashboard');
+        return redirect('/myproperties');
     }
+    public function transfer($id){
+        $nid = $id;
+        $n1 = 0;
+        return view("transfer",compact('nid','n1'));
+    }
+    public function transferproperty(Request $request,$id){
+        $property = PropertyDetail::find($id);
+        $email = $request-> email;
+        $user = User::where('email',$email) -> get();
+        if ($user->isEmpty()) {
+            $n1 = 1;
+            $nid = $id;
+            $message = "Th email id you entered is not registered on this site";
+            return view("transfer", compact('message','nid','n1'));
+        }else{
+            $user = User::where('email',$email)->first();
+        $property -> username = $user->username;
+        $property->save();
+        return redirect('/myproperties');}
+    }
+    
     
 }
