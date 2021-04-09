@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\PropertyController;
+
+use App\Http\Controllers\Auth\TenantController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,22 +34,11 @@ Route::get('/addproperty',[PropertyController::class, 'addproperty'])->middlewar
 Route::post('/addpropertydetails',[PropertyController::class, 'addthedetails'])->middleware(['auth'])->name('landlord.editproperty');
 Route::get('/transfer/{id}',[PropertyController::class, 'transfer'])->middleware(['auth'])->name('landlord.transferproperty');
 Route::post('/transferproperty/{id}',[PropertyController::class, 'transferproperty'])->middleware(['auth'])->name('landlord.transfered');
-
-Route::get('/landlordmainpage', function () {
-    return view('landlordmainpage');
-});
-
-
-Route::get('/transfer', function () {
-    return view('transfer');
-});
-
-Route::get('/endproperty', function () {
-    return view('endproperty');
-});
-
-Route::get('/startproperty', function () {
-    return view('startproperty');
-});
+Route::get('/property/{pid}',[TenantController::class, 'landingpage'])->middleware(['auth'])->name('landlord.tenantdetails');
+Route::get('/addtenant/{pid}',[TenantController::class, 'addtenant'])->middleware(['auth'])->name('landlord.addingdetail');
+Route::get('/endtenant/{pid}',[TenantController::class, 'endtenant'])->middleware(['auth'])->name('landlord.reviewingtenant');
+Route::post('/addtenantdetail/{id}',[TenantController::class, 'storetenant'])->middleware(['auth'])->name('landlord.storingnewtenantdetail');
+Route::post('/reviewtenant/{id}',[TenantController::class, 'storereview'])->middleware(['auth'])->name('landlord.tenantsreview');
+Route::get('/tenantpage',[TenantController::class, 'tenant'])->middleware(['auth'])->name('landlord.editproperty');
 
 require __DIR__.'/auth.php';
