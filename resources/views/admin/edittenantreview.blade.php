@@ -5,10 +5,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Lumino - Dashboard</title>
-    <link href="adminassets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="adminassets/css/font-awesome.min.css" rel="stylesheet">
-    <link href="adminassets/css/datepicker3.css" rel="stylesheet">
-    <link href="adminassets/css/styles.css" rel="stylesheet">
+    <link href="/adminassets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/adminassets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/adminassets/css/datepicker3.css" rel="stylesheet">
+    <link href="/adminassets/css/styles.css" rel="stylesheet">
 
     <!--Custom Font-->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -116,8 +116,8 @@
         <ul class="nav menu">
             <li><a href="admin.html"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
             <li><a href="manage-user.html"><em class="fa fa-users">&nbsp;</em> User</a></li>
-            <li class="active"><a href="manage-admin.html"><em class="fa fa-user">&nbsp;</em> Admin</a></li>
-            <li><a href="manage-admin.html"><em class="fa fa-user">&nbsp;</em> Tenant Review </a></li>
+            <li><a href="manage-admin.html"><em class="fa fa-user">&nbsp;</em> Admin</a></li>
+            <li class="active"><a href="manage-tenant.html"><em class="fa fa-user">&nbsp;</em> Tenant Review </a></li>
             <li><a href="manage-property.html"><em class="fa fa-user">&nbsp;</em> Landlord Property </a></li>
             <li><a href="contactus.html"><em class="fa fa-comments">&nbsp;</em> Contact Us </a></li>
             <li><a href="login.html"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
@@ -133,7 +133,9 @@
                         <em class="fa fa-home"></em>
                     </a>
                 </li>
-                <li class="active">Admin</li>
+                <li class="active">tenant</li>
+                <li class="active">username</li>
+                <li class="active">edit</li>
             </ol>
         </div>
         <!--/.row-->
@@ -144,39 +146,37 @@
             </div>
         </div>
         <!--/.row-->
-        <div class="row col-md-12">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    Forms
-                </div>
-                <div class="panel-body">
+        <div class="row panel panel-default ml-auto">
+
+            <div class="panel-heading">
+                Forms
+            </div>
+            <div class="panel-body">
+                <div class="">
                     <form role="form">
                         <div class="form-group">
                             <label>Name</label>
                             <input class="form-control" placeholder="Placeholder">
                         </div>
                         <div class="form-group">
-                            <label>Username</label>
+                            <label>Property</label>
                             <input class="form-control" placeholder="Placeholder">
                         </div>
                         <div class="form-group">
-                            <label>Email</label>
-                            <input type="email" class="form-control">
+                            <label>Review</label>
+                            <textarea class="form-control" cols="30" rows="8"></textarea>
                         </div>
                         <div class="form-group">
-                            <label>Password</label>
-                            <input type="password" class="form-control">
+                            <label>Pincode</label>
+                            <input class="form-control" placeholder="Placeholder">
                         </div>
+
                         <button class="btn btn-success">Submit</button>
                     </form>
                 </div>
             </div>
         </div>
-
-
-
-
-
+    </div>
 </body>
 
 </html>

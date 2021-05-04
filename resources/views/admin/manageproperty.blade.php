@@ -5,10 +5,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Lumino - Dashboard</title>
-    <link href="adminassets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="adminassets/css/font-awesome.min.css" rel="stylesheet">
-    <link href="adminassets/css/datepicker3.css" rel="stylesheet">
-    <link href="adminassets/css/styles.css" rel="stylesheet">
+    <link href="/adminassets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/adminassets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/adminassets/css/datepicker3.css" rel="stylesheet">
+    <link href="/adminassets/css/styles.css" rel="stylesheet">
 
     <!--Custom Font-->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -134,51 +134,48 @@
                     </a>
                 </li>
                 <li class="active">Property</li>
-                <li class="active">username</li>
-                <li class="active">edit</li>
             </ol>
         </div>
         <!--/.row-->
 
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Admin</h1>
+                <h1 class="page-header">Property List</h1>
             </div>
         </div>
         <!--/.row-->
-        <div class="row panel panel-default ml-auto">
 
-            <div class="panel-heading">
-                Forms
-            </div>
-            <div class="panel-body">
-                <div class="">
-                    <form role="form">
-                        <div class="form-group">
-                            <label>userame</label>
-                            <input class="form-control" placeholder="Placeholder">
-                        </div>
-                        <div class="form-group">
-                            <label>Property</label>
-                            <input class="form-control" placeholder="Placeholder">
-                        </div>
-                        <div class="form-group">
-                            <label>Property Adress</label>
-                            <textarea class="form-control" cols="30" rows="8"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label>Pincode</label>
-                            <input class="form-control" placeholder="Placeholder">
-                        </div>
-
-                        <button class="btn btn-success">Submit</button>
-                    </form>
+        <div class="row col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <a href="#" class="btn btn-danger">Reset All User</a>
+                </div>
+                <div class="panel-heading">
+                    <div class="col-md-9">
+                        User
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <table class="table">
+                        <tr>
+                            <th class="col-md-2">ID</th>
+                            <th class="col-md-3">Username</th>
+                            <th class="col-md-4">Email</th>
+                            <th class="col-md-3">Options</th>
+                        </tr>
+                        <tr>
+                            <td class="row">1</td>
+                            <td>nilu1909</td>
+                            <td>nileshsomvansi@gmail.com</td>
+                            <td>
+                                <a href="see-propertydetails.html" class="btn btn-primary">View Property Details</a>
+                                <a href="#" class="btn btn-danger">Delete</a>
+                            </td>
+                        </tr>
+                    </table>
                 </div>
             </div>
-
-
-
-
+        </div>
 
 </body>
 

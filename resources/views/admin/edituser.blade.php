@@ -5,10 +5,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Lumino - Dashboard</title>
-    <link href="adminassets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="adminassets/css/font-awesome.min.css" rel="stylesheet">
-    <link href="adminassets/css/datepicker3.css" rel="stylesheet">
-    <link href="adminassets/css/styles.css" rel="stylesheet">
+    <link href="/adminassets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/adminassets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/adminassets/css/datepicker3.css" rel="stylesheet">
+    <link href="/adminassets/css/styles.css" rel="stylesheet">
 
     <!--Custom Font-->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -115,10 +115,10 @@
         </form>
         <ul class="nav menu">
             <li><a href="admin.html"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
-            <li><a href="manage-user.html"><em class="fa fa-users">&nbsp;</em> User</a></li>
+            <li class="active"><a href="manage-user.html"><em class="fa fa-users">&nbsp;</em> User</a></li>
             <li><a href="manage-admin.html"><em class="fa fa-user">&nbsp;</em> Admin</a></li>
-            <li><a href="manage-tenant.html"><em class="fa fa-user">&nbsp;</em> Tenant Review </a></li>
-            <li class="active"><a href="manage-property.html"><em class="fa fa-user">&nbsp;</em> Landlord Property </a></li>
+            <li><a href="manage-admin.html"><em class="fa fa-user">&nbsp;</em> Tenant Review </a></li>
+            <li><a href="manage-property.html"><em class="fa fa-user">&nbsp;</em> Landlord Property </a></li>
             <li><a href="contactus.html"><em class="fa fa-comments">&nbsp;</em> Contact Us </a></li>
             <li><a href="login.html"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
         </ul>
@@ -133,50 +133,47 @@
                         <em class="fa fa-home"></em>
                     </a>
                 </li>
-                <li class="active">Property</li>
+                <li class="active">Admin</li>
             </ol>
         </div>
         <!--/.row-->
 
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Property List</h1>
+                <h1 class="page-header">Admin</h1>
             </div>
         </div>
         <!--/.row-->
+        <div class="row panel panel-default ml-auto">
 
-        <div class="row col-md-12">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <a href="#" class="btn btn-danger">Reset All User</a>
-                </div>
-                <div class="panel-heading">
-                    <div class="col-md-9">
-                        User
-                    </div>
-                </div>
-                <div class="panel-body">
-                    <table class="table">
-                        <tr>
-                            <th class="col-md-2">ID</th>
-                            <th class="col-md-3">Username</th>
-                            <th class="col-md-4">Email</th>
-                            <th class="col-md-3">Options</th>
-                        </tr>
-                        <tr>
-                            <td class="row">1</td>
-                            <td>nilu1909</td>
-                            <td>nileshsomvansi@gmail.com</td>
-                            <td>
-                                <a href="see-propertydetails.html" class="btn btn-primary">View Property Details</a>
-                                <a href="#" class="btn btn-danger">Delete</a>
-                            </td>
-                        </tr>
-                    </table>
+            <div class="panel-heading">
+                Forms
+            </div>
+            <div class="panel-body col-md-6 offset-md-3">
+                <div class="col-md-6 offset-md-3">
+                    <form role="form">
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input class="form-control" placeholder="Placeholder">
+                        </div>
+                        <div class="form-group">
+                            <label>Username</label>
+                            <input class="form-control" placeholder="Placeholder">
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" class="form-control">
+                        </div>
+                        <button class="btn btn-success">Submit</button>
+                    </form>
                 </div>
             </div>
         </div>
-
+    </div>
 </body>
 
 </html>

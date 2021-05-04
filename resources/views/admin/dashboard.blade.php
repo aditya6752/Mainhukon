@@ -114,7 +114,7 @@
             </div>
         </form>
         <ul class="nav menu">
-            <li class="active"><a href="index.html"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
+            <li class="active"><a href="/admin/dashboard"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
             <li><a href="manage-user.html"><em class="fa fa-users">&nbsp;</em> User</a></li>
             <li><a href="manage-admin.html"><em class="fa fa-user">&nbsp;</em> Admin</a></li>
             <li><a href="manage-tenant.html"><em class="fa fa-user">&nbsp;</em> Tenant Review </a></li>
