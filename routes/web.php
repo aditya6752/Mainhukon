@@ -42,3 +42,4 @@ Route::post('/reviewtenant/{id}',[TenantController::class, 'storereview'])->midd
 Route::get('/tenantpage',[TenantController::class, 'tenant'])->middleware(['auth'])->name('landlord.editproperty');
 
 require __DIR__.'/auth.php';
+require __DIR__.'/admin-panel.php';
