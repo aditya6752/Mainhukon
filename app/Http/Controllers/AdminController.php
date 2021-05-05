@@ -11,7 +11,7 @@ class AdminController extends Controller
         
         return view('admin.dashboard');
     } 
-    public function conatactus(){
+    public function contactus(){
         
         return view('admin.contactus');
     } 

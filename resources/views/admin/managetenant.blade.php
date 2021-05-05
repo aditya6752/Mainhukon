@@ -114,12 +114,12 @@
             </div>
         </form>
         <ul class="nav menu">
-            <li><a href="admin.html"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
-            <li><a href="manage-user.html"><em class="fa fa-users">&nbsp;</em> User</a></li>
-            <li><a href="manage-admin.html"><em class="fa fa-user">&nbsp;</em> Admin</a></li>
-            <li class="active"><a href="manage-tenant.html"><em class="fa fa-user">&nbsp;</em> Tenant Review </a></li>
-            <li><a href="manage-property.html"><em class="fa fa-user">&nbsp;</em> Landlord Property </a></li>
-            <li><a href="contactus.html"><em class="fa fa-comments">&nbsp;</em> Contact Us </a></li>
+            <li><a href="/admin/dashboard"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
+            <li><a href="/admin/manageuser"><em class="fa fa-users">&nbsp;</em> User</a></li>
+            <li><a href="/admin/manageadmin"><em class="fa fa-user">&nbsp;</em> Admin</a></li>
+            <li class="active"><a href="/admin/managetenant"><em class="fa fa-user">&nbsp;</em> Tenant Review </a></li>
+            <li><a href="/admin/manageproperty"><em class="fa fa-user">&nbsp;</em> Landlord Property </a></li>
+            <li><a href="/admin/contactus"><em class="fa fa-comments">&nbsp;</em> Contact Us </a></li>
             <li><a href="login.html"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
         </ul>
     </div>
@@ -167,7 +167,7 @@
                             <td>nilu1909</td>
                             <td>nileshsomvansi@gmail.com</td>
                             <td>
-                                <a href="see-tenantreview.html" class="btn btn-primary">View Tenant Review</a>
+                                <a href="/admin/seetenantreview" class="btn btn-primary">View Tenant Review</a>
                                 <a href="#" class="btn btn-danger">Delete</a>
                             </td>
                         </tr>
