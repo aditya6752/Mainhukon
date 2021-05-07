@@ -102,7 +102,7 @@
                 <img src="http://placehold.it/50/30a5ff/fff" class="img-responsive" alt="">
             </div>
             <div class="profile-usertitle">
-                <div class="profile-usertitle-name">Username</div>
+                <div class="profile-usertitle-name">{{Auth::user()->name}}</div>
                 <div class="profile-usertitle-status"><span class="indicator label-success"></span>Online</div>
             </div>
             <div class="clear"></div>
@@ -120,7 +120,11 @@
             <li><a href="/admin/managetenant"><em class="fa fa-user">&nbsp;</em> Tenant Review </a></li>
             <li><a href="/admin/manageproperty"><em class="fa fa-user">&nbsp;</em> Landlord Property </a></li>
             <li class="active"><a href="/admin/contactus"><em class="fa fa-comments">&nbsp;</em> Contact Us </a></li>
-            <li><a href="login.html"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
+            <li><form method="POST" action="{{ route('logout') }}">
+                @csrf <a href="{{route('logout')}} " onclick="event.preventDefault();
+                                    this.closest('form').submit();"><em class="fa fa-power-off">&nbsp;</em> Logout</a>
+                </form>
+                </li>
         </ul>
     </div>
     <!--/.sidebar-->

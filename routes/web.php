@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\PropertyController;
 
 use App\Http\Controllers\Auth\TenantController;
+use App\Http\Controllers\AdminController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -40,6 +41,12 @@ Route::get('/endtenant/{pid}',[TenantController::class, 'endtenant'])->middlewar
 Route::post('/addtenantdetail/{id}',[TenantController::class, 'storetenant'])->middleware(['auth'])->name('landlord.storingnewtenantdetail');
 Route::post('/reviewtenant/{id}',[TenantController::class, 'storereview'])->middleware(['auth'])->name('landlord.tenantsreview');
 Route::get('/tenantpage',[TenantController::class, 'tenant'])->middleware(['auth'])->name('landlord.editproperty');
+Route::get('/admin/register',[AdminController::class, 'adminregister']);
+
+
+Route::post('/admin/store',[AdminController::class, 'store'])
+                ->middleware(['guest'])
+                ->name('admin.register');
 
 require __DIR__.'/auth.php';
 
