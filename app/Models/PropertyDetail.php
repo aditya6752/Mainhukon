@@ -8,5 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class PropertyDetail extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'PID',
+        'address',
+        'username',
+    ];
+
     protected $table = 'property_details';
 }

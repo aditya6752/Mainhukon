@@ -118,7 +118,7 @@
             <li><a href="/admin/manageuser"><em class="fa fa-users">&nbsp;</em> User</a></li>
             <li><a href="/admin/manageadmin"><em class="fa fa-user">&nbsp;</em> Admin</a></li>
             <li><a href="/admin/managetenant"><em class="fa fa-user">&nbsp;</em> Tenant Review </a></li>
-            <li class="active"><a href=""><em class="fa fa-user">&nbsp;</em> Landlord Property </a></li>
+            <li class="active"><a href="/admin/manageproperty"><em class="fa fa-user">&nbsp;</em> Landlord Property </a></li>
             <li><a href="/admin/contactus"><em class="fa fa-comments">&nbsp;</em> Contact Us </a></li>
             <li><a href="login.html"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
         </ul>
@@ -153,22 +153,19 @@
             </div>
             <div class="panel-body">
                 <div class="">
-                    <form role="form">
+                    <form role="form" method="post" action="/admin/storeproperty/{{$property->id}}">
+                        @csrf
                         <div class="form-group">
                             <label>userame</label>
-                            <input class="form-control" placeholder="Placeholder">
+                            <input class="form-control" placeholder="Placeholder" name = "username" value = "{{$property->username}}">
                         </div>
                         <div class="form-group">
                             <label>Property</label>
-                            <input class="form-control" placeholder="Placeholder">
+                            <input class="form-control" placeholder="Placeholder" name="PID" value = "{{$property->PID}}">
                         </div>
                         <div class="form-group">
                             <label>Property Adress</label>
-                            <textarea class="form-control" cols="30" rows="8"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label>Pincode</label>
-                            <input class="form-control" placeholder="Placeholder">
+                            <textarea class="form-control" cols="30" rows="8" name="address"> {{$property->address}}</textarea>
                         </div>
 
                         <button class="btn btn-success">Submit</button>

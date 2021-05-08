@@ -140,7 +140,7 @@
 
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Admin</h1>
+                <h1 class="page-header">User</h1>
             </div>
         </div>
         <!--/.row-->
@@ -151,22 +151,22 @@
             </div>
             <div class="panel-body col-md-6 offset-md-3">
                 <div class="col-md-6 offset-md-3">
-                    <form role="form">
+                    <form method="post" action="/admin/storeusers/{{$usr->id}}"role="form"> @csrf
                         <div class="form-group">
                             <label>Name</label>
-                            <input class="form-control" placeholder="Placeholder">
+                            <input class="form-control" placeholder="Placeholder" name="name" value="{{$usr->name}}">
                         </div>
                         <div class="form-group">
                             <label>Username</label>
-                            <input class="form-control" placeholder="Placeholder">
+                            <input class="form-control" placeholder="Placeholder" name="username" value="{{$usr->username}}">
                         </div>
                         <div class="form-group">
                             <label>Email</label>
-                            <input type="email" class="form-control">
+                            <input type="email" class="form-control" name="email" value="{{$usr->email}}">
                         </div>
                         <div class="form-group">
                             <label>Password</label>
-                            <input type="password" class="form-control">
+                            <input type="password" class="form-control" name="password">
                         </div>
                         <button class="btn btn-success">Submit</button>
                     </form>

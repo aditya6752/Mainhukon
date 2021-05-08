@@ -115,14 +115,14 @@
 				<li><a href="#">
 					<em class="fa fa-home"></em>
 				</a></li>
-				<li class="active">Property</li>
-				<li class="active">Username</li>
+				<li class="active">review</li>
+				<li class="active">{{$username}}</li>
 			</ol>
 		</div><!--/.row-->
 		
 		<div class="row">
 			<div class="col-lg-12">
-				<h1 class="page-header">Property of Username</h1>
+				<h1 class="page-header">Review of {{$username}}</h1>
 			</div>
 		</div><!--/.row-->
 		
@@ -141,15 +141,18 @@
                             <th class="col-md-4">Review</th>
                             <th class="col-md-3">Options</th>
                         </tr>
-                        <tr>
-                            <td class="row">1</td>
-                            <td>426010_1</td>
-                            <td>dfjsdpinvdois ipvjdopvjdwpovndob ijrwdpvjdpvj</td>
+                        @foreach ($tenant as $tenant)
+						<tr>
+                            <td class="row">{{$tenant->id}}</td>
+                            <td>{{$tenant-> PID}}</td>
+                            <td>{{$tenant-> Review}}</td>
                             <td>
-                                <a href="/admin/edittenantreview" class="btn btn-primary">Edit</a>
-                                <a href="#" class="btn btn-danger">Delete</a>
+                                <a href="/admin/edittenantreview/{{$tenant->id}}" class="btn btn-primary">Edit</a>
+                                <a href="/admin/deletereview/{{$tenant->id}}" class="btn btn-danger">Delete</a>
                             </td>
-                        </tr>
+                        </tr>	
+						@endforeach
+						
                     </table>
                 </div>
             </div>

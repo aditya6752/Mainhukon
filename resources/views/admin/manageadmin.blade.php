@@ -160,20 +160,31 @@
                             <th class="col-md-4">Email</th>
                             <th class="col-md-3">Options</th>
                         </tr>
+                        
+                        @foreach ($user as $user )
                         <tr>
-                            <td class="row">1</td>
-                            <td>nilu1909</td>
-                            <td>nileshsomvansi@gmail.com</td>
+                            <td class="row">{{$user->id}}</td>
+                            <td>{{$user->username}}</td>
+                            <td>{{$user->email}}</td>
                             <td>
-                                <a href="/admin/editadmin" class="btn btn-primary">Edit</a>
-                                <a href="#" class="btn btn-danger">Delete</a>
+                                <a href="/admin/editadmin/{{$user->id}}" class="btn btn-primary">Edit</a>
+                                <a href="/admin/deleteadmin/{{$user->id}}" class="btn btn-danger">Delete</a>
                             </td>
                         </tr>
+                            
+                        @endforeach    
+                        
+                        
                     </table>
                 </div>
             </div>
         </div>
     </div>
+    @if(session('status'))
+        <script>
+        alert("{{session('status')}}")
+        </script>
+        @endif
 </body>
 
 </html>

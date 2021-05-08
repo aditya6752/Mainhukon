@@ -6,6 +6,8 @@ use App\Models\Admin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Models\PropertyDetail;
+use App\Models\Tenant;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Hash;
@@ -22,55 +24,130 @@ class AdminController extends Controller
 
         return view('admin.contactus');
     }
-    public function editadmin()
+    public function editadmin($id)
     {
-
-        return view('admin.editadmin');
+        $usr = User::where('id', $id)->first();
+        return view('admin.editadmin',compact('usr'));
     }
-    public function editproperty()
+    public function storeadmins($id,Request $request){
+        $user = User::where('id', $id)->first();
+        if ($request['password']) {
+            $request['password'] = Hash::make($request->password);
+        } else {
+            $request['password'] = $user->password;
+        }
+        $user->update($request->all());
+        $name = $user->username;
+        return redirect('/admin/manageadmin')->with('status','Details of '.$name.' is updated');
+    }
+    public function deleteadmin($id){
+        $user = User::where('id', $id)->first();
+        $name = $user->username;
+        $user->delete();
+        PropertyDetail::where('username',$name)->delete();
+        Tenant::where('tenant_username',$name)->delete();
+        Tenant::where('landlord_username',$name)->delete();
+        return redirect('/admin/manageadmin')->with('status',$name.' is Deleted');
+    }
+    
+    public function editproperty($id)
     {
-
-        return view('admin.editproperty');
+        $property = PropertyDetail::where('id',$id)->first();
+        return view('admin.editproperty',compact('property'));
     }
-    public function edittenantreview()
+    public function storeproperty(Request $request,$id){
+        $property = PropertyDetail::where('id',$id) -> first();
+        $property->update($request->all());
+        return redirect('/admin/seepropertydetails/'.$property->username.'');
+    }
+    public function deleteproperty($id){
+        $property = PropertyDetail::where('id',$id);
+        $name = $property->first()->username;
+        $property->delete();
+        return redirect('/admin/seepropertydetails/'.$name.'');
+    }
+    public function edittenantreview($id)
     {
-
-        return view('admin.edittenantreview');
+        $tenant = Tenant::where('id', $id)->first();
+        return view('admin.edittenantreview',compact('tenant'));
     }
-    public function edituser()
+    public function deletereview($id){
+        $property = Tenant::where('id',$id);
+        $name = $property->first()->tenant_username;
+        $property->delete();
+        return redirect('/admin/seetenantreview/'.$name.'');
+    }
+    public function storetenant(Request $request,$id){
+        $property = Tenant::where('id',$id) -> first();
+        $property->update($request->all());
+        return redirect('/admin/seetenantreview/'.$property->tenant_username.'');
+    }
+    public function edituser($id)
     {
-
-        return view('admin.edituser');
+        $usr = User::where('id', $id)->first();
+        return view('admin.edituser',compact('usr'));
     }
+    public function storeusers($id,Request $request){
+        $user = User::where('id', $id)->first();
+        if ($request['password']) {
+            $request['password'] = Hash::make($request->password);
+        } else {
+            $request['password'] = $user->password;
+        }
+        
+        $user->update($request->all());
+        $name = $user->username;
+        return redirect('/admin/manageuser')->with('status','Details of '.$name.' is updated');
+    }
+    public function deleteuser($id){
+        $user = User::where('id', $id)->first();
+        $name = $user->username;
+        $user->delete();
+        PropertyDetail::where('username',$name)->delete();
+        Tenant::where('tenant_username',$name)->delete();
+        Tenant::where('landlord_username',$name)->delete();
+        return redirect('/admin/manageuser')->with('status',$name.' is Deleted');
+    }
+    public function resetuser($id){
+        $user = User::where('id', $id) -> first();
+        $name = $user ->username;
+        PropertyDetail::where('username',$name)->delete();
+        Tenant::where('tenant_username',$name)->delete();
+        Tenant::where('landlord_username',$name)->delete();
+        return redirect('/admin/manageuser')->with('status','Details of '.$name.' is Deleted');
+    }
+    
     public function manageadmin()
     {
-
-        return view('admin.manageadmin');
+        $user = User::where('user_type','admin')->get();
+        return view('admin.manageadmin',compact('user'));
     }
     public function manageproperty()
     {
-
-        return view('admin.manageproperty');
+        $user = User::all();
+        return view('admin.manageproperty',compact('user'));
     }
     public function managetenant()
     {
-
-        return view('admin.managetenant');
+        $user = User::all();
+        return view('admin.managetenant',compact('user'));
     }
     public function manageuser()
     {
-
-        return view('admin.manageuser');
+        $user = User::all();
+        return view('admin.manageuser',compact('user'));
     }
-    public function seepropertydetails()
+    public function seepropertydetails($username)
     {
-
-        return view('admin.seepropertydetails');
+        $property = PropertyDetail::where('username',$username)->get();
+        $username = $username;
+        return view('admin.seepropertydetails',compact('property','username'));
     }
-    public function seetenantreview()
+    public function seetenantreview($username)
     {
-
-        return view('admin.seetenantreview');
+        $tenant = Tenant::where('tenant_username',$username)->get();
+        $username = $username;
+        return view('admin.seetenantreview',compact('tenant','username'));
     }
     public function adminregister()
     {

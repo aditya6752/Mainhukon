@@ -116,8 +116,8 @@
         <ul class="nav menu">
             <li><a href="/admin/dashboard"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
             <li><a href="/admin/manageuser"><em class="fa fa-users">&nbsp;</em> User</a></li>
-            <li class="active"><a href="manage-admin.html"><em class="fa fa-user">&nbsp;</em> Admin</a></li>
-            <li><a href="/admin/manageadmin"><em class="fa fa-user">&nbsp;</em> Tenant Review </a></li>
+            <li class="active"><a href="/admin/manageadmin"><em class="fa fa-user">&nbsp;</em> Admin</a></li>
+            <li><a href="/admin/managetenant"><em class="fa fa-user">&nbsp;</em> Tenant Review </a></li>
             <li><a href="/admin/manageproperty"><em class="fa fa-user">&nbsp;</em> Landlord Property </a></li>
             <li><a href="/admin/contactus"><em class="fa fa-comments">&nbsp;</em> Contact Us </a></li>
             <li><a href="login.html"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
@@ -150,18 +150,19 @@
                     Forms
                 </div>
                 <div class="panel-body">
-                    <form role="form">
+                    <form role="form" method="post" action="/admin/storeadmins/{{$usr->id}}">
+                    @csrf
                         <div class="form-group">
                             <label>Name</label>
-                            <input class="form-control" placeholder="Placeholder">
+                            <input class="form-control" placeholder="Placeholder" name="name" value="{{$usr->name}}">
                         </div>
                         <div class="form-group">
                             <label>Username</label>
-                            <input class="form-control" placeholder="Placeholder">
+                            <input class="form-control" placeholder="Placeholder" name="username" value="{{$usr->username}}">
                         </div>
                         <div class="form-group">
                             <label>Email</label>
-                            <input type="email" class="form-control">
+                            <input type="email" class="form-control" name="email" value="{{$usr->email}}">
                         </div>
                         <div class="form-group">
                             <label>Password</label>

@@ -139,7 +139,7 @@
 
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Property List</h1>
+                <h1 class="page-header">User List</h1>
             </div>
         </div>
         <!--/.row-->
@@ -162,15 +162,18 @@
                             <th class="col-md-4">Email</th>
                             <th class="col-md-3">Options</th>
                         </tr>
+                        @foreach ($user as $user)
                         <tr>
-                            <td class="row">1</td>
-                            <td>nilu1909</td>
-                            <td>nileshsomvansi@gmail.com</td>
+                            <td class="row">{{$user->id}}</td>
+                            <td>{{$user->username}}</td>
+                            <td>{{$user->email}}</td>
                             <td>
-                                <a href="/admin/seetenantreview" class="btn btn-primary">View Tenant Review</a>
-                                <a href="#" class="btn btn-danger">Delete</a>
+                                <a href="/admin/seetenantreview/{{$user->username}}" class="btn btn-primary">View Tenant Review</a>
+                                <a href="/admin/delete/{{$user->username}}" class="btn btn-danger">Delete</a>
                             </td>
-                        </tr>
+                        </tr>    
+                        @endforeach
+                        
                     </table>
                 </div>
             </div>

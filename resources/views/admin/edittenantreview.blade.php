@@ -153,23 +153,34 @@
             </div>
             <div class="panel-body">
                 <div class="">
-                    <form role="form">
+                    <form role="form" method="POST" action="/admin/storetenant/{{$tenant->id}}">
+                        @csrf
                         <div class="form-group">
-                            <label>Name</label>
-                            <input class="form-control" placeholder="Placeholder">
+                            <label>Landlord Name</label>
+                            <input class="form-control" placeholder="Placeholder" name="landlord_username" value="{{$tenant->landlord_username}}">
                         </div>
                         <div class="form-group">
                             <label>Property</label>
-                            <input class="form-control" placeholder="Placeholder">
+                            <input class="form-control" placeholder="Placeholder" name="PID" value="{{$tenant->PID}}">
                         </div>
                         <div class="form-group">
                             <label>Review</label>
-                            <textarea class="form-control" cols="30" rows="8"></textarea>
+                            <textarea class="form-control" cols="30" rows="8">{{$tenant->Review}}</textarea>
                         </div>
                         <div class="form-group">
-                            <label>Pincode</label>
-                            <input class="form-control" placeholder="Placeholder">
+                            <label>Tenant</label>
+                            <input class="form-control" placeholder="Placeholder" name="PID" value="{{$tenant->tenant_username}}">
                         </div>
+                        <div class="form-group">
+                            <label>Start Date</label>
+                            <input class="form-control" placeholder="Placeholder" name="start_date" value="{{$tenant->start_date}}">
+                        </div>
+                        <div class="form-group">
+                            <label>Property</label>
+                            <input class="form-control" placeholder="Placeholder" name="end_date" value="{{$tenant->end_date}}">
+                        </div>
+                        
+                        
 
                         <button class="btn btn-success">Submit</button>
                     </form>
