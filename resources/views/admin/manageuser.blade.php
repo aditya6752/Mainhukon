@@ -172,10 +172,9 @@
                             <td>
                                 <a href="/admin/edituser/{{$user->id}}" class="btn btn-primary">Edit</a>
                                 <a href="/admin/deleteuser/{{$user->id}}" class="btn btn-danger">Delete</a>
-                                <a href="/admin/resetuser/{{$user->id}}" class="btn btn-danger">Reset</a>
+                                <a href="/admin/resetuser/{{$user->id}}" class= "btn" style = "background-color: black; ">Reset</a>
                             </td>
                         </tr>
-
                         @endforeach
                     </table>
                 </div>
