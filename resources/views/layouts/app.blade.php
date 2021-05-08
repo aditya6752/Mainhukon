@@ -12,6 +12,19 @@
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+        <link rel="stylesheet" href="/bstp/css/bootstrap-grid.css">
+        <link rel="stylesheet" href="/bstp/css/bootstrap-grid.css.map">
+        <link rel="stylesheet" href="/bstp/css/bootstrap-grid.min.css">
+        <link rel="stylesheet" href="/bstp/css/bootstrap-grid.min.css.map">
+        <link rel="stylesheet" href="/bstp/css/bootstrap-reboot.css">
+        <link rel="stylesheet" href="/bstp/css/bootstrap-reboot.css.map">
+        <link rel="stylesheet" href="/bstp/css/bootstrap-reboot.min.css">
+        <link rel="stylesheet" href="/bstp/css/bootstrap-reboot.min.css.map"> 
+        <link rel="stylesheet" href="/bstp/css/bootstrap.css">       
+        <link rel="stylesheet" href="/bstp/css/bootstrap.css.map">
+        <link rel="stylesheet" href="/bstp/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/bstp/css/bootstrap.min.css.map">
+
 
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
@@ -33,5 +46,15 @@
                 {{ $slot }}
             </main>
         </div>
+        <script src="/bstp/js/bootstrap.js"></script>
+        <script src="/bst/js/bootstrap.bundle.js.map"></script>
+        <script src="/bst/js/bootstrap.bundle.min.js"></script>
+        <script src="/bstp/js/bootstrap.bundle.min.js.map"></script>
+        <script src="/bstp/js/bootstrap.js"></script>
+        <script src="/bstp/js/bootstrap.js.map"></script>
+        <script src="/bstp/js/bootstrap.min.js"></script>
+        <script src="/bstp/js/bootstrap.min.js.map"></script>
+
+
     </body>
 </html>

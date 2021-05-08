@@ -32,14 +32,14 @@ class PropertyController extends Controller
         
     }
     public function landlordlanding(){
-        $property = PropertyDetail::where('username', Auth::user()->username) -> get();
+        $properties = PropertyDetail::where('username', Auth::user()->username) -> get();
         $i = 1;
-        foreach ($property as $property) {
+        foreach ($properties as $property) {
             $i=$i+1;
         }
-        $property = PropertyDetail::where('username', Auth::user()->username) -> get();
+        $properties = PropertyDetail::where('username', Auth::user()->username) -> get();
         
-        return view('myproperties',compact('property','i'));
+        return view('myproperties',compact('properties','i'));
     }
     public function editpropertydetails($PID){
         $property = PropertyDetail::where('PID', $PID) -> first();
