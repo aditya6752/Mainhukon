@@ -117,10 +117,14 @@
             <li><a href="/admin/dashboard"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
             <li class="active"><a href="/admin/manageuser"><em class="fa fa-users">&nbsp;</em> User</a></li>
             <li><a href="/admin/manageadmin"><em class="fa fa-user">&nbsp;</em> Admin</a></li>
-            <li><a href="/admin/edittenantreview"><em class="fa fa-user">&nbsp;</em> Tenant Review </a></li>
+            <li><a href="/admin/managetenant"><em class="fa fa-user">&nbsp;</em> Tenant Review </a></li>
             <li><a href="/admin/manageproperty"><em class="fa fa-user">&nbsp;</em> Landlord Property </a></li>
             <li><a href="/admin/contactus"><em class="fa fa-comments">&nbsp;</em> Contact Us </a></li>
-            <li><a href="login.html"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
+            <li><form method="POST" action="{{ route('logout') }}">
+                @csrf <a href="{{route('logout')}} " onclick="event.preventDefault();
+                                    this.closest('form').submit();"><em class="fa fa-power-off">&nbsp;</em> Logout</a>
+                </form>
+                </li>
         </ul>
     </div>
     <!--/.sidebar-->
