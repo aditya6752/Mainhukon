@@ -102,7 +102,7 @@
                 <img src="http://placehold.it/50/30a5ff/fff" class="img-responsive" alt="">
             </div>
             <div class="profile-usertitle">
-                <div class="profile-usertitle-name">Username</div>
+                <div class="profile-usertitle-name">{{Auth::user()->name}}</div>
                 <div class="profile-usertitle-status"><span class="indicator label-success"></span>Online</div>
             </div>
             <div class="clear"></div>
@@ -158,7 +158,7 @@
                         <tr>
                             <th class="col-md-2">ID</th>
                             <th class="col-md-3">Property ID</th>
-                            <th class="col-md-4">Tenant Review</th>
+                            <th class="col-md-4">Address</th>
                             <th class="col-md-3">Options</th>
                         </tr>
                         @foreach ($property as  $property)
