@@ -23,16 +23,12 @@
                     @endforeach
                 </table>
             </div>
-<<<<<<< HEAD
             <a href="/addproperty">
                 <button
                     class="flex mx-auto mt-16 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Add
                     Property
                 </button>
             </a>
-
-=======
->>>>>>> b8cd466e0f2b39041782d9e918792ed44f64d9a4
         </div>
 
     </section>
