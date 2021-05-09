@@ -174,7 +174,7 @@
                             <td>{{$user->email}}</td>
                             <td>
                                 <a href="/admin/seepropertydetails/{{$user->username}}" class="btn btn-primary">View Property Details</a>
-                                <a href="/admin/delete/{{$user->username}}" class="btn btn-danger">Delete</a>
+                                <a href="/admin/resetproperty/{{$user->username}}" class="btn btn-danger">Delete All the Property</a>
                             </td>
                         </tr>    
                         @endforeach
@@ -183,7 +183,11 @@
                 </div>
             </div>
         </div>
-
+        @if(session('status'))
+        <script>
+        alert("{{session('status')}}")
+        </script>
+        @endif
 </body>
 
 </html>

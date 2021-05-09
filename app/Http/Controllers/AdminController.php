@@ -66,6 +66,10 @@ class AdminController extends Controller
         $property->delete();
         return redirect('/admin/seepropertydetails/'.$name.'');
     }
+    public function resetproperty($username){
+        PropertyDetail::where('username',$name)->delete();
+        return redirect('/admin/manageproperty')->with('status','Property Details of '.$name.' is Deleted');
+    }
     public function edittenantreview($id)
     {
         $tenant = Tenant::where('id', $id)->first();
@@ -76,6 +80,11 @@ class AdminController extends Controller
         $name = $property->first()->tenant_username;
         $property->delete();
         return redirect('/admin/seetenantreview/'.$name.'');
+    }
+    public function resettenantreviews($username){
+        $name = $username;
+        Tenant::where('landlord_username',$name)->delete();
+        return redirect('/admin/managetenant')->with('status','Review given by this '.$name.' is Deleted');
     }
     public function storetenant(Request $request,$id){
         $property = Tenant::where('id',$id) -> first();
