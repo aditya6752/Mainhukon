@@ -11,21 +11,23 @@
     <link href="/adminassets/css/styles.css" rel="stylesheet">
 
     <!--Custom Font-->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
     <!--[if lt IE 9]>
-	<script src="js/html5shiv.js"></script>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
+ <script src="js/html5shiv.js"></script>
+ <script src="js/respond.min.js"></script>
+ <![endif]-->
 </head>
 
 <body>
     <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sidebar-collapse"><span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span></button>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#sidebar-collapse"><span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span></button>
                 <a class="navbar-brand" href="#"><span>Occuman</span>Admin</a>
                 <ul class="nav navbar-top-links navbar-right">
                     <li class="dropdown">
@@ -39,8 +41,10 @@
                                         <img alt="image" class="img-circle" src="http://placehold.it/40/30a5ff/fff">
                                     </a>
                                     <div class="message-body"><small class="pull-right">3 mins ago</small>
-                                        <a href="#"><strong>John Doe</strong> commented on <strong>your photo</strong>.</a>
-                                        <br /><small class="text-muted">1:24 pm - 25/03/2015</small></div>
+                                        <a href="#"><strong>John Doe</strong> commented on <strong>your
+                                                photo</strong>.</a>
+                                        <br /><small class="text-muted">1:24 pm - 25/03/2015</small>
+                                    </div>
                                 </div>
                             </li>
                             <li class="divider"></li>
@@ -51,7 +55,8 @@
                                     </a>
                                     <div class="message-body"><small class="pull-right">1 hour ago</small>
                                         <a href="#">New message from <strong>Jane Doe</strong>.</a>
-                                        <br /><small class="text-muted">12:27 pm - 25/03/2015</small></div>
+                                        <br /><small class="text-muted">12:27 pm - 25/03/2015</small>
+                                    </div>
                                 </div>
                             </li>
                             <li class="divider"></li>
@@ -72,21 +77,24 @@
                             <li>
                                 <a href="#">
                                     <div><em class="fa fa-envelope"></em> 1 New Message
-                                        <span class="pull-right text-muted small">3 mins ago</span></div>
+                                        <span class="pull-right text-muted small">3 mins ago</span>
+                                    </div>
                                 </a>
                             </li>
                             <li class="divider"></li>
                             <li>
                                 <a href="#">
                                     <div><em class="fa fa-heart"></em> 12 New Likes
-                                        <span class="pull-right text-muted small">4 mins ago</span></div>
+                                        <span class="pull-right text-muted small">4 mins ago</span>
+                                    </div>
                                 </a>
                             </li>
                             <li class="divider"></li>
                             <li>
                                 <a href="#">
                                     <div><em class="fa fa-user"></em> 5 New Followers
-                                        <span class="pull-right text-muted small">4 mins ago</span></div>
+                                        <span class="pull-right text-muted small">4 mins ago</span>
+                                    </div>
                                 </a>
                             </li>
                         </ul>
@@ -102,7 +110,7 @@
                 <img src="http://placehold.it/50/30a5ff/fff" class="img-responsive" alt="">
             </div>
             <div class="profile-usertitle">
-                <div class="profile-usertitle-name">{{Auth::user()->name}}</div>
+                <div class="profile-usertitle-name">{{ Auth::user()->name }}</div>
                 <div class="profile-usertitle-status"><span class="indicator label-success"></span>Online</div>
             </div>
             <div class="clear"></div>
@@ -120,11 +128,12 @@
             <li><a href="/admin/managetenant"><em class="fa fa-user">&nbsp;</em> Tenant Review </a></li>
             <li><a href="/admin/manageproperty"><em class="fa fa-user">&nbsp;</em> Landlord Property </a></li>
             <li><a href="/admin/contactus"><em class="fa fa-comments">&nbsp;</em> Contact Us </a></li>
-            <li><form method="POST" action="{{ route('logout') }}">
-                @csrf <a href="{{route('logout')}} " onclick="event.preventDefault();
+            <li>
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf <a href="{{ route('logout') }} " onclick="event.preventDefault();
                                     this.closest('form').submit();"><em class="fa fa-power-off">&nbsp;</em> Logout</a>
                 </form>
-                </li>
+            </li>
         </ul>
     </div>
     <!--/.sidebar-->
@@ -163,27 +172,29 @@
                             <th class="col-md-3">Options</th>
                         </tr>
                         @foreach ($user as $user)
-                            
-                        
-                        <tr>
-                            <td class="row">{{$user->id}}</td>
-                            <td>{{$user->username}}</td>
-                            <td>{{$user->email}}</td>
-                            <td>
-                                <a href="/admin/edituser/{{$user->id}}" class="btn btn-primary">Edit</a>
-                                <a href="/admin/deleteuser/{{$user->id}}" class="btn btn-danger">Delete</a>
-                                <a href="/admin/resetuser/{{$user->id}}" class= "btn" style = "background-color: black; ">Reset</a>
-                            </td>
-                        </tr>
+
+
+                            <tr>
+                                <td class="row">{{ $user->id }}</td>
+                                <td>{{ $user->username }}</td>
+                                <td>{{ $user->email }}</td>
+                                <td>
+                                    <a href="/admin/edituser/{{ $user->id }}" class="btn btn-primary">Edit</a>
+                                    <a href="/admin/deleteuser/{{ $user->id }}" class="btn btn-danger">Delete</a>
+                                    <a href="/admin/resetuser/{{ $user->id }}" class="btn"
+                                        style="background-color: black; ">Reset</a>
+                                </td>
+                            </tr>
                         @endforeach
                     </table>
                 </div>
             </div>
         </div>
-        @if(session('status'))
-        <script>
-        alert("{{session('status')}}")
-        </script>
+        @if (session('status'))
+            <script>
+                alert("{{ session('status') }}")
+
+            </script>
         @endif
 </body>
 
