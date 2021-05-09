@@ -29,7 +29,6 @@
                     Property
                 </button>
             </a>
-
         </div>
         $@if (session('username'))
             <script>
