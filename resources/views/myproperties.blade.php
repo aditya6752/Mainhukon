@@ -8,7 +8,6 @@
         <div class="container px-5 py-24 mx-auto clearfix ">
             <div class="panel-body bg-white border-b border-gray-200 p-3 m-auto rounded">
                 <table class="table container p-3">
-
                     @foreach ($properties as $property)
                         <tr class="row row-cols-1 row-cols-sm-3 row-cols-md-5">
                             <td class="col">{{ $property->PID }}</td>
@@ -24,6 +23,7 @@
                     @endforeach
                 </table>
             </div>
+<<<<<<< HEAD
             <a href="/addproperty">
                 <button
                     class="flex mx-auto mt-16 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Add
@@ -31,6 +31,8 @@
                 </button>
             </a>
 
+=======
+>>>>>>> b8cd466e0f2b39041782d9e918792ed44f64d9a4
         </div>
 
     </section>
