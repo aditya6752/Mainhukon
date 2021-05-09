@@ -35,5 +35,5 @@ Route::post('/admin/storetenant/{id}', [AdminController::class,'storetenant']);
 Route::get('/admin/deleteproperty/{id}',[AdminController::class, 'deleteproperty']);
 Route::get('/admin/deletereview/{id}',[AdminController::class, 'deletereview']);
 Route::get('/admin/resetproperty/{username}',[AdminController::class, 'resetproperty']);
-Route::get('/admin/resettenant/{username}',[AdminController::class, 'resettenant']);
+Route::get('/admin/resettenantreview/{username}',[AdminController::class, 'resettenant']);
 ?>

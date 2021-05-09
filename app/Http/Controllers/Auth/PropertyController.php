@@ -4,6 +4,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Users;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
@@ -46,7 +47,7 @@ class PropertyController extends Controller
         return view('editproperty',compact('property'));
     }
     public function updatepropertydetails(Request $request,$id){
-        $property = PropertyDetail::find($id);
+        $property = PropertyDetail::where('id',$id)->first();
         $property -> address = $request->address;
         $property->save();
         return redirect('/myproperties');
@@ -87,18 +88,18 @@ class PropertyController extends Controller
         return view("transfer",compact('nid','n1'));
     }
     public function transferproperty(Request $request,$id){
-        $property = PropertyDetail::find($id);
+        $property = PropertyDetail::where('PID',$id)->first();
         $email = $request-> email;
         $user = User::where('email',$email) -> get();
         if ($user->isEmpty()) {
             $n1 = 1;
             $nid = $id;
-            $message = "Th email id you entered is not registered on this site";
+            $message = "The email id you entered is not registered on this site";
             return view("transfer", compact('message','nid','n1'));
         }else{
-            $user = User::where('email',$email)->first();
-        $property -> username = $user->username;
-        $property->save();
+            $user1 = Users::where('email',$email) -> first();
+            $property-> username = $user1->username;
+            $property->save();
         return redirect('/myproperties');}
     }
     

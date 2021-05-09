@@ -67,8 +67,8 @@ class AdminController extends Controller
         return redirect('/admin/seepropertydetails/'.$name.'');
     }
     public function resetproperty($username){
-        PropertyDetail::where('username',$name)->delete();
-        return redirect('/admin/manageproperty')->with('status','Property Details of '.$name.' is Deleted');
+        PropertyDetail::where('username',$username)->delete();
+        return redirect('/admin/manageproperty')->with('status','Property Details of '.$username.' is Deleted');
     }
     public function edittenantreview($id)
     {
@@ -81,7 +81,7 @@ class AdminController extends Controller
         $property->delete();
         return redirect('/admin/seetenantreview/'.$name.'');
     }
-    public function resettenantreviews($username){
+    public function resettenant($username){
         $name = $username;
         Tenant::where('landlord_username',$name)->delete();
         return redirect('/admin/managetenant')->with('status','Review given by this '.$name.' is Deleted');
