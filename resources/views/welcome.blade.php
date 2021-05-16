@@ -1,132 +1,1250 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
 
-        <title>Laravel</title>
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<!-- Mirrored from jthemes.net/themes/html/treko/files/demo-12.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 10 Apr 2021 20:40:43 GMT -->
 
-        <!-- Styles -->
-        <style>
-            /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}a{background-color:transparent}[hidden]{display:none}html{font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;line-height:1.5}*,:after,:before{box-sizing:border-box;border:0 solid #e2e8f0}a{color:inherit;text-decoration:inherit}svg,video{display:block;vertical-align:middle}video{max-width:100%;height:auto}.bg-white{--bg-opacity:1;background-color:#fff;background-color:rgba(255,255,255,var(--bg-opacity))}.bg-gray-100{--bg-opacity:1;background-color:#f7fafc;background-color:rgba(247,250,252,var(--bg-opacity))}.border-gray-200{--border-opacity:1;border-color:#edf2f7;border-color:rgba(237,242,247,var(--border-opacity))}.border-t{border-top-width:1px}.flex{display:flex}.grid{display:grid}.hidden{display:none}.items-center{align-items:center}.justify-center{justify-content:center}.font-semibold{font-weight:600}.h-5{height:1.25rem}.h-8{height:2rem}.h-16{height:4rem}.text-sm{font-size:.875rem}.text-lg{font-size:1.125rem}.leading-7{line-height:1.75rem}.mx-auto{margin-left:auto;margin-right:auto}.ml-1{margin-left:.25rem}.mt-2{margin-top:.5rem}.mr-2{margin-right:.5rem}.ml-2{margin-left:.5rem}.mt-4{margin-top:1rem}.ml-4{margin-left:1rem}.mt-8{margin-top:2rem}.ml-12{margin-left:3rem}.-mt-px{margin-top:-1px}.max-w-6xl{max-width:72rem}.min-h-screen{min-height:100vh}.overflow-hidden{overflow:hidden}.p-6{padding:1.5rem}.py-4{padding-top:1rem;padding-bottom:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.pt-8{padding-top:2rem}.fixed{position:fixed}.relative{position:relative}.top-0{top:0}.right-0{right:0}.shadow{box-shadow:0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px 0 rgba(0,0,0,.06)}.text-center{text-align:center}.text-gray-200{--text-opacity:1;color:#edf2f7;color:rgba(237,242,247,var(--text-opacity))}.text-gray-300{--text-opacity:1;color:#e2e8f0;color:rgba(226,232,240,var(--text-opacity))}.text-gray-400{--text-opacity:1;color:#cbd5e0;color:rgba(203,213,224,var(--text-opacity))}.text-gray-500{--text-opacity:1;color:#a0aec0;color:rgba(160,174,192,var(--text-opacity))}.text-gray-600{--text-opacity:1;color:#718096;color:rgba(113,128,150,var(--text-opacity))}.text-gray-700{--text-opacity:1;color:#4a5568;color:rgba(74,85,104,var(--text-opacity))}.text-gray-900{--text-opacity:1;color:#1a202c;color:rgba(26,32,44,var(--text-opacity))}.underline{text-decoration:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.w-5{width:1.25rem}.w-8{width:2rem}.w-auto{width:auto}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}@media (min-width:640px){.sm\:rounded-lg{border-radius:.5rem}.sm\:block{display:block}.sm\:items-center{align-items:center}.sm\:justify-start{justify-content:flex-start}.sm\:justify-between{justify-content:space-between}.sm\:h-20{height:5rem}.sm\:ml-0{margin-left:0}.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\:pt-0{padding-top:0}.sm\:text-left{text-align:left}.sm\:text-right{text-align:right}}@media (min-width:768px){.md\:border-t-0{border-top-width:0}.md\:border-l{border-left-width:1px}.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (min-width:1024px){.lg\:px-8{padding-left:2rem;padding-right:2rem}}@media (prefers-color-scheme:dark){.dark\:bg-gray-800{--bg-opacity:1;background-color:#2d3748;background-color:rgba(45,55,72,var(--bg-opacity))}.dark\:bg-gray-900{--bg-opacity:1;background-color:#1a202c;background-color:rgba(26,32,44,var(--bg-opacity))}.dark\:border-gray-700{--border-opacity:1;border-color:#4a5568;border-color:rgba(74,85,104,var(--border-opacity))}.dark\:text-white{--text-opacity:1;color:#fff;color:rgba(255,255,255,var(--text-opacity))}.dark\:text-gray-400{--text-opacity:1;color:#cbd5e0;color:rgba(203,213,224,var(--text-opacity))}}
-        </style>
+<head>
 
-        <style>
-            body {
-                font-family: 'Nunito', sans-serif;
-            }
-        </style>
-    </head>
-    <body class="antialiased">
-        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-            @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                    @auth
-                        <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 underline">Dashboard</a>
-                    @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Log in</a>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="author" content="Jthemes" />
+    <meta name="description" content="Treko - Software & Startup Premium Landing Page Template" />
+    <meta name="keywords" content="Responsive, HTML5 Template, Jthemes, Landing, Startup, Software, Business, Company, Creative, Freelancers">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
+    <!-- SITE TITLE -->
+    <title>Occuman</title>
 
-            <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
-                <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
-                    <svg viewBox="0 0 651 192" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-16 w-auto text-gray-700 sm:h-20">
-                        <g clip-path="url(#clip0)" fill="#EF3B2D">
-                            <path d="M248.032 44.676h-16.466v100.23h47.394v-14.748h-30.928V44.676zM337.091 87.202c-2.101-3.341-5.083-5.965-8.949-7.875-3.865-1.909-7.756-2.864-11.669-2.864-5.062 0-9.69.931-13.89 2.792-4.201 1.861-7.804 4.417-10.811 7.661-3.007 3.246-5.347 6.993-7.016 11.239-1.672 4.249-2.506 8.713-2.506 13.389 0 4.774.834 9.26 2.506 13.459 1.669 4.202 4.009 7.925 7.016 11.169 3.007 3.246 6.609 5.799 10.811 7.66 4.199 1.861 8.828 2.792 13.89 2.792 3.913 0 7.804-.955 11.669-2.863 3.866-1.908 6.849-4.533 8.949-7.875v9.021h15.607V78.182h-15.607v9.02zm-1.431 32.503c-.955 2.578-2.291 4.821-4.009 6.73-1.719 1.91-3.795 3.437-6.229 4.582-2.435 1.146-5.133 1.718-8.091 1.718-2.96 0-5.633-.572-8.019-1.718-2.387-1.146-4.438-2.672-6.156-4.582-1.719-1.909-3.032-4.152-3.938-6.73-.909-2.577-1.36-5.298-1.36-8.161 0-2.864.451-5.585 1.36-8.162.905-2.577 2.219-4.819 3.938-6.729 1.718-1.908 3.77-3.437 6.156-4.582 2.386-1.146 5.059-1.718 8.019-1.718 2.958 0 5.656.572 8.091 1.718 2.434 1.146 4.51 2.674 6.229 4.582 1.718 1.91 3.054 4.152 4.009 6.729.953 2.577 1.432 5.298 1.432 8.162-.001 2.863-.479 5.584-1.432 8.161zM463.954 87.202c-2.101-3.341-5.083-5.965-8.949-7.875-3.865-1.909-7.756-2.864-11.669-2.864-5.062 0-9.69.931-13.89 2.792-4.201 1.861-7.804 4.417-10.811 7.661-3.007 3.246-5.347 6.993-7.016 11.239-1.672 4.249-2.506 8.713-2.506 13.389 0 4.774.834 9.26 2.506 13.459 1.669 4.202 4.009 7.925 7.016 11.169 3.007 3.246 6.609 5.799 10.811 7.66 4.199 1.861 8.828 2.792 13.89 2.792 3.913 0 7.804-.955 11.669-2.863 3.866-1.908 6.849-4.533 8.949-7.875v9.021h15.607V78.182h-15.607v9.02zm-1.432 32.503c-.955 2.578-2.291 4.821-4.009 6.73-1.719 1.91-3.795 3.437-6.229 4.582-2.435 1.146-5.133 1.718-8.091 1.718-2.96 0-5.633-.572-8.019-1.718-2.387-1.146-4.438-2.672-6.156-4.582-1.719-1.909-3.032-4.152-3.938-6.73-.909-2.577-1.36-5.298-1.36-8.161 0-2.864.451-5.585 1.36-8.162.905-2.577 2.219-4.819 3.938-6.729 1.718-1.908 3.77-3.437 6.156-4.582 2.386-1.146 5.059-1.718 8.019-1.718 2.958 0 5.656.572 8.091 1.718 2.434 1.146 4.51 2.674 6.229 4.582 1.718 1.91 3.054 4.152 4.009 6.729.953 2.577 1.432 5.298 1.432 8.162 0 2.863-.479 5.584-1.432 8.161zM650.772 44.676h-15.606v100.23h15.606V44.676zM365.013 144.906h15.607V93.538h26.776V78.182h-42.383v66.724zM542.133 78.182l-19.616 51.096-19.616-51.096h-15.808l25.617 66.724h19.614l25.617-66.724h-15.808zM591.98 76.466c-19.112 0-34.239 15.706-34.239 35.079 0 21.416 14.641 35.079 36.239 35.079 12.088 0 19.806-4.622 29.234-14.688l-10.544-8.158c-.006.008-7.958 10.449-19.832 10.449-13.802 0-19.612-11.127-19.612-16.884h51.777c2.72-22.043-11.772-40.877-33.023-40.877zm-18.713 29.28c.12-1.284 1.917-16.884 18.589-16.884 16.671 0 18.697 15.598 18.813 16.884h-37.402zM184.068 43.892c-.024-.088-.073-.165-.104-.25-.058-.157-.108-.316-.191-.46-.056-.097-.137-.176-.203-.265-.087-.117-.161-.242-.265-.345-.085-.086-.194-.148-.29-.223-.109-.085-.206-.182-.327-.252l-.002-.001-.002-.002-35.648-20.524a2.971 2.971 0 00-2.964 0l-35.647 20.522-.002.002-.002.001c-.121.07-.219.167-.327.252-.096.075-.205.138-.29.223-.103.103-.178.228-.265.345-.066.089-.147.169-.203.265-.083.144-.133.304-.191.46-.031.085-.08.162-.104.25-.067.249-.103.51-.103.776v38.979l-29.706 17.103V24.493a3 3 0 00-.103-.776c-.024-.088-.073-.165-.104-.25-.058-.157-.108-.316-.191-.46-.056-.097-.137-.176-.203-.265-.087-.117-.161-.242-.265-.345-.085-.086-.194-.148-.29-.223-.109-.085-.206-.182-.327-.252l-.002-.001-.002-.002L40.098 1.396a2.971 2.971 0 00-2.964 0L1.487 21.919l-.002.002-.002.001c-.121.07-.219.167-.327.252-.096.075-.205.138-.29.223-.103.103-.178.228-.265.345-.066.089-.147.169-.203.265-.083.144-.133.304-.191.46-.031.085-.08.162-.104.25-.067.249-.103.51-.103.776v122.09c0 1.063.568 2.044 1.489 2.575l71.293 41.045c.156.089.324.143.49.202.078.028.15.074.23.095a2.98 2.98 0 001.524 0c.069-.018.132-.059.2-.083.176-.061.354-.119.519-.214l71.293-41.045a2.971 2.971 0 001.489-2.575v-38.979l34.158-19.666a2.971 2.971 0 001.489-2.575V44.666a3.075 3.075 0 00-.106-.774zM74.255 143.167l-29.648-16.779 31.136-17.926.001-.001 34.164-19.669 29.674 17.084-21.772 12.428-43.555 24.863zm68.329-76.259v33.841l-12.475-7.182-17.231-9.92V49.806l12.475 7.182 17.231 9.92zm2.97-39.335l29.693 17.095-29.693 17.095-29.693-17.095 29.693-17.095zM54.06 114.089l-12.475 7.182V46.733l17.231-9.92 12.475-7.182v74.537l-17.231 9.921zM38.614 7.398l29.693 17.095-29.693 17.095L8.921 24.493 38.614 7.398zM5.938 29.632l12.475 7.182 17.231 9.92v79.676l.001.005-.001.006c0 .114.032.221.045.333.017.146.021.294.059.434l.002.007c.032.117.094.222.14.334.051.124.088.255.156.371a.036.036 0 00.004.009c.061.105.149.191.222.288.081.105.149.22.244.314l.008.01c.084.083.19.142.284.215.106.083.202.178.32.247l.013.005.011.008 34.139 19.321v34.175L5.939 144.867V29.632h-.001zm136.646 115.235l-65.352 37.625V148.31l48.399-27.628 16.953-9.677v33.862zm35.646-61.22l-29.706 17.102V66.908l17.231-9.92 12.475-7.182v33.841z"/>
-                        </g>
-                    </svg>
-                </div>
+    <!-- FAVICON AND TOUCH ICONS -->
+    <link rel="shortcut icon" href="/logo/final-icon.png" type="image/x-icon">
+    <link rel="icon" href="/logo/final-icon.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/logo/final-icon.png">
+    <link rel="icon" href="/logo/final-icon.png" type="image/x-icon">
 
-                <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
-                    <div class="grid grid-cols-1 md:grid-cols-2">
-                        <div class="p-6">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laravel.com/docs" class="underline text-gray-900 dark:text-white">Documentation</a></div>
-                            </div>
+    <!-- GOOGLE FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:300,400,500,700,900" rel="stylesheet">
 
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel has wonderful, thorough documentation covering every aspect of the framework. Whether you are new to the framework or have previous experience with Laravel, we recommend reading all of the documentation from beginning to end.
-                                </div>
-                            </div>
-                        </div>
+    <!-- BOOTSTRAP CSS -->
+    <link href="/frontasset/css/bootstrap.min.css" rel="stylesheet">
 
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-t-0 md:border-l">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laracasts.com" class="underline text-gray-900 dark:text-white">Laracasts</a></div>
-                            </div>
+    <!-- FONT ICONS -->
+    <link href="../../../../../use.fontawesome.com/releases/v5.11.0/css/all.css" rel="stylesheet" crossorigin="anonymous">
+    <link href="/frontasset/css/flaticon.css" rel="stylesheet">
 
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript development. Check them out, see for yourself, and massively level up your development skills in the process.
-                                </div>
-                            </div>
-                        </div>
+    <!-- PLUGINS STYLESHEET -->
+    <link href="/frontasset/css/menu.css" rel="stylesheet">
+    <link id="effect" href="/frontasset/css/dropdown-effects/fade-down.css" media="all" rel="stylesheet">
+    <link href="/frontasset/css/magnific-popup.css" rel="stylesheet">
+    <link href="/frontasset/css/owl.carousel.min.css" rel="stylesheet">
+    <link href="/frontasset/css/owl.theme.default.min.css" rel="stylesheet">
 
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laravel-news.com/" class="underline text-gray-900 dark:text-white">Laravel News</a></div>
-                            </div>
+    <!-- ON SCROLL ANIMATION -->
+    <link href="/frontasset/css/animate.css" rel="stylesheet">
 
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel News is a community driven portal and newsletter aggregating all of the latest and most important news in the Laravel ecosystem, including new package releases and tutorials.
-                                </div>
-                            </div>
-                        </div>
+    <!-- TEMPLATE CSS -->
+    <link href="/frontasset/css/skyblue-theme.css" rel="stylesheet">
 
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-l">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold text-gray-900 dark:text-white">Vibrant Ecosystem</div>
-                            </div>
+    <!-- Style Switcher CSS -->
+    <link href="/frontasset/css/brick-theme.css" rel="alternate stylesheet" title="brick-theme">
+    <link href="/frontasset/css/dimgreen-theme.css" rel="alternate stylesheet" title="dimgreen-theme">
+    <link href="/frontasset/css/green-theme.css" rel="alternate stylesheet" title="green-theme">
+    <link href="/frontasset/css/indigo-theme.css" rel="alternate stylesheet" title="indigo-theme">
+    <link href="/frontasset/css/orangered-theme.css" rel="alternate stylesheet" title="orangered-theme">
+    <link href="/frontasset/css/pink-theme.css" rel="alternate stylesheet" title="pink-theme">
+    <link href="/frontasset/css/red-theme.css" rel="alternate stylesheet" title="red-theme">
+    <link href="/frontasset/css/royalblue-theme.css" rel="alternate stylesheet" title="royalblue-theme">
+    <link href="/frontasset/css/violet-theme.css" rel="alternate stylesheet" title="violet-theme">
 
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel's robust library of first-party tools and libraries, such as <a href="https://forge.laravel.com" class="underline">Forge</a>, <a href="https://vapor.laravel.com" class="underline">Vapor</a>, <a href="https://nova.laravel.com" class="underline">Nova</a>, and <a href="https://envoyer.io" class="underline">Envoyer</a> help you take your projects to the next level. Pair them with powerful open source libraries like <a href="https://laravel.com/docs/billing" class="underline">Cashier</a>, <a href="https://laravel.com/docs/dusk" class="underline">Dusk</a>, <a href="https://laravel.com/docs/broadcasting" class="underline">Echo</a>, <a href="https://laravel.com/docs/horizon" class="underline">Horizon</a>, <a href="https://laravel.com/docs/sanctum" class="underline">Sanctum</a>, <a href="https://laravel.com/docs/telescope" class="underline">Telescope</a>, and more.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <!-- RESPONSIVE CSS -->
+    <link href="/frontasset/css/responsive.css" rel="stylesheet">
 
-                <div class="flex justify-center mt-4 sm:items-center sm:justify-between">
-                    <div class="text-center text-sm text-gray-500 sm:text-left">
-                        <div class="flex items-center">
-                            <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor" class="-mt-px w-5 h-5 text-gray-400">
-                                <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                            </svg>
+</head>
 
-                            <a href="https://laravel.bigcartel.com" class="ml-1 underline">
-                                Shop
-                            </a>
 
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="ml-4 -mt-px w-5 h-5 text-gray-400">
-                                <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                            </svg>
 
-                            <a href="https://github.com/sponsors/taylorotwell" class="ml-1 underline">
-                                Sponsor
-                            </a>
-                        </div>
-                    </div>
 
-                    <div class="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0">
-                        Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
-                    </div>
-                </div>
+<body>
+
+
+
+    <!-- PRELOADER SPINNER
+		============================================= -->
+    <div id="loader-wrapper">
+        <div id="loading">
+            <div class="cssload-loader">
+                <div class="cssload-ball cssload-ball-1"></div>
+                <div class="cssload-ball cssload-ball-2"></div>
+                <div class="cssload-ball cssload-ball-3"></div>
+                <div class="cssload-ball cssload-ball-4"></div>
             </div>
         </div>
-    </body>
+    </div>
+
+    <!-- PAGE CONTENT
+		============================================= -->
+    <div id="page" class="page">
+
+
+
+
+        <!-- HEADER
+			============================================= -->
+        <header id="header" class="header tra-menu navbar-light">
+            <div class="header-wrapper">
+
+
+                <!-- MOBILE HEADER -->
+                <div class="wsmobileheader clearfix">
+                    <span class="smllogo"><img src="/frontasset/images/Asset 24.png" width="155" height="38" alt="mobile-logo"/></span>
+                    <a id="wsnavtoggle" class="wsanimated-arrow"><span></span></a>
+                </div>
+
+
+                <!-- NAVIGATION MENU -->
+                <div class="wsmainfull menu clearfix">
+                    <div class="wsmainwp clearfix">
+
+
+                        <!-- LOGO IMAGE -->
+                        <!-- For Retina Ready displays take a image with double the amount of pixels that your image will be displayed (e.g 310 x 72 pixels) -->
+                        <div class="desktoplogo">
+                            <a href="#hero-12" class="logo-black"><img src="/frontasset/images/Asset 24.png" width="155" height="35" alt="header-logo"></a>
+                        </div>
+                        <!--  <div class="desktoplogo">
+                            <a href="#hero-12" class="logo-black"><img src="images/logo-01.png" width="155" height="36" alt="header-logo"></a>
+                        </div> -->
+                        <div class="desktoplogo">
+                            <a href="#hero-12" class="logo-white"><img src="/frontasset/images/final-logo(white).svg" width="155" height="75" alt="header-logo"></a>
+                        </div>
+
+
+                        <!-- MAIN MENU -->
+                        <nav class="wsmenu clearfix">
+                            <ul class="wsmenu-list">
+                                <!-- SIMPLE NAVIGATION LINK -->
+                                <li class="nl-simple" aria-haspopup="true">
+
+                                    <li class="nl-simple" aria-haspopup="true"><a href="#services-3">Features</a></li>
+
+                                    <li class="nl-simple" aria-haspopup="true"><a href="/login">Login/SignUp</a></li>
+
+
+                                    <!-- DROPDOWN MENU -->
+                                    <li aria-haspopup="true"><a href="#team-1">Meet the Team</a>
+
+                                    </li>
+                                    <!-- END DROPDOWN MENU -->
+
+
+                                    <!-- SIMPLE NAVIGATION LINK -->
+                                    <li class="nl-simple" aria-haspopup="true"><a href="#faqs-1">FAQs</a></li>
+                                    <!-- HEADER BUTTON -->
+                                    <li class="nl-simple" aria-haspopup="true">
+                                        <a href="#contacts-2" class="btn btn-tra-white primary-hover last-link">Contacts</a>
+                                    </li>
+
+
+
+                            </ul>
+                        </nav>
+                        <!-- END MAIN MENU -->
+
+                    </div>
+                </div>
+                <!-- END NAVIGATION MENU -->
+
+
+            </div>
+            <!-- End header-wrapper -->
+        </header>
+        <!-- END HEADER -->
+
+
+
+
+        <!-- HERO-12
+			============================================= -->
+        <section id="hero-12" class="bg-scroll hero-section division">
+            <div class="container">
+
+
+                <!-- HERO TEXT -->
+                <div class="row">
+                    <div class="col-lg-10 offset-lg-1">
+                        <div class="hero-12-txt white-color wow fadeInUp" data-wow-duration="2.5s" data-wow-delay="0.4s">
+
+                            <!-- Title -->
+                            <h3 class="h3-xs">A Cross platform for tenant and landlord</h3>
+
+                            <!-- Text -->
+
+
+                        </div>
+                    </div>
+                </div>
+                <!-- HERO TEXT -->
+
+
+                <!-- HERO IMAGE -->
+                <div class="row">
+                    <div class="col-lg-10 offset-lg-1 text-center">
+                        <div class="video-preview wow fadeInUp" data-wow-duration="2.5s" data-wow-delay="0.8s">
+                            <img class="img-fluid" src="/frontasset/images/design4.png" alt="video-preview">
+                        </div>
+                    </div>
+                </div>
+                <!-- HERO IMAGE -->
+
+            </div>
+            <!-- End container -->
+
+
+            <!-- SECTION OVERLAY -->
+            <div class="bg-fixed white-overlay-bottom"></div>
+
+
+        </section>
+        <!-- END HERO-12 -->
+
+
+
+
+        <!-- SERVICES-3
+			============================================= -->
+        <section id="services-3" class="services-3 wide-60 services-section division">
+            <div class="container">
+
+
+                <!-- SERVICES-3 WRAPPER -->
+                <div class="sbox-3-wrapper">
+                    <div class="row">
+
+
+                        <!-- SERVICE BOX #1 -->
+                        <div class="col-sm-6 col-lg-4">
+                            <div class="sbox-3 wow fadeInUp" data-wow-delay="0.4s">
+
+                                <!-- Icon -->
+                                <div class="sbox-3-ico ico-60 steelgrey-color"><span class="flaticon-browser-8"></span></div>
+
+                                <!-- Text -->
+                                <div class="sbox-3-txt">
+                                    <h6 class="h6-lg">Quick Access</h6>
+                                    <p class="grey-color">All the resources of the Occuman platform can be easily accessed without any confusion.
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                        <!-- SERVICE BOX #2 -->
+                        <div class="col-sm-6 col-lg-4">
+                            <div class="sbox-3 wow fadeInUp" data-wow-delay="0.6s">
+
+                                <!-- Icon -->
+                                <div class="sbox-3-ico ico-60 steelgrey-color"><span class="flaticon-key-2"></span></div>
+
+                                <!-- Text -->
+                                <div class="sbox-3-txt">
+                                    <h6 class="h6-lg">Powerful Settings</h6>
+                                    <p class="grey-color">The settings and powerfull and easy which provides handson experience to the users.
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                        <!-- SERVICE BOX #3 -->
+                        <div class="col-sm-6 col-lg-4">
+                            <div class="sbox-3 wow fadeInUp" data-wow-delay="0.8s">
+
+                                <!-- Icon -->
+                                <div class="sbox-3-ico ico-60 steelgrey-color"><span class="flaticon-chart"></span></div>
+
+                                <!-- Text -->
+                                <div class="sbox-3-txt">
+                                    <h6 class="h6-lg">Free, free and free</h6>
+                                    <p class="grey-color">The platform is completely free, each of its feature is open for all.
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                        <!-- SERVICE BOX #4 -->
+                        <div class="col-sm-6 col-lg-4">
+                            <div class="sbox-3 wow fadeInUp" data-wow-delay="1s">
+
+                                <!-- Icon -->
+                                <div class="sbox-3-ico ico-60 steelgrey-color"><span class="flaticon-pyramid"></span></div>
+
+                                <!-- Text -->
+                                <div class="sbox-3-txt">
+                                    <h6 class="h6-lg">Privacy protection</h6>
+                                    <p class="grey-color">Privcy protection is one of the most important feature of the product, the tech stack used for the developemnt is unique in its way of protection of privacy.
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                        <!-- SERVICE BOX #5 -->
+                        <div class="col-sm-6 col-lg-4">
+                            <div class="sbox-3 wow fadeInUp" data-wow-delay="1.2s">
+
+                                <!-- Icon -->
+                                <div class="sbox-3-ico ico-60 steelgrey-color"><span class="flaticon-bar-chart"></span></div>
+
+                                <!-- Text -->
+                                <div class="sbox-3-txt">
+                                    <h6 class="h6-lg">Services</h6>
+                                    <p class="grey-color">Varied options are present for the users, to have a smooth experience.
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                        <!-- SERVICE BOX #6 -->
+                        <div class="col-sm-6 col-lg-4">
+                            <div class="sbox-3 wow fadeInUp" data-wow-delay="1.4s">
+
+                                <!-- Icon -->
+                                <div class="sbox-3-ico ico-60 steelgrey-color"><span class="flaticon-padlock"></span></div>
+
+                                <!-- Text -->
+                                <div class="sbox-3-txt">
+                                    <h6 class="h6-lg">Concrete Security</h6>
+                                    <p class="grey-color">The data is highly secured on our platform, no third party is able to intrud in the system.
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <!-- End row -->
+                </div>
+                <!-- END SERVICES-3 WRAPPER -->
+
+
+            </div>
+            <!-- End container -->
+        </section>
+        <!-- END SERVICES-3 -->
+
+
+        {{-- <!-- STATISTIC-3
+			============================================= -->
+
+            <section id="statistic-3" class="statistic-3 bg-03 wide-60 statistic-section division">
+            <div class="container white-color">
+
+
+                <!-- SECTION TITLE -->
+                <div class="row">
+                    <div class="col-lg-10 col-xl-8 offset-lg-1 offset-xl-2">
+                        <div class="section-title mb-60">
+
+                            <!-- Title 	-->
+                            <h3 class="h3-md">Live performmance displayer</h3>
+
+                            <!-- Text -->
+                            <p class="p-lg">Below listed datas updates live every moment.
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-lg-10 offset-lg-1">
+                        <div class="row text-center">
+
+
+                            <!-- STATISTIC BLOCK #1 -->
+                            <div class="col-sm-6 col-md-3">
+                                <div class="statistic-block">
+
+                                    <!-- Icon  -->
+                                    <div class="statistic-ico ico-50"><span class="flaticon-browser-8"></span></div>
+                                    <!-- Text -->
+                                    <h5 class="statistic-number">5,<span class="count-element">682</span></h5>
+                                    <p>Total Visits till date</p>
+
+                                </div>
+                            </div>
+
+
+                            <!-- STATISTIC BLOCK #2 -->
+                            <div class="col-sm-6 col-md-3">
+                                <div class="statistic-block">
+
+                                    <!-- Icon  -->
+                                    <div class="statistic-ico ico-50"><span class="flaticon-chat-3"></span></div>
+
+                                    <!-- Text -->
+                                    <h5 class="statistic-number">4,<span class="count-element">889</span></h5>
+                                    <p>Happy Customers</p>
+
+                                </div>
+                            </div>
+
+
+                            <!-- STATISTIC BLOCK #3 -->
+                            <div class="col-sm-6 col-md-3">
+                                <div class="statistic-block">
+
+                                    <!-- Icon  -->
+                                    <div class="statistic-ico ico-50"><span class="flaticon-users-1"></span></div>
+
+                                    <!-- Text -->
+                                    <h5 class="statistic-number">6,<span class="count-element">179</span></h5>
+                                    <p>Active Accounts</p>
+
+                                </div>
+                            </div>
+
+
+                            <!-- STATISTIC BLOCK #4 -->
+                            <div class="col-sm-6 col-md-3">
+                                <div class="statistic-block">
+
+                                    <!-- Icon  -->
+                                    <div class="statistic-ico ico-50"><span class="flaticon-help"></span></div>
+
+                                    <!-- Text -->
+                                    <h5 class="statistic-number">1,<span class="count-element">473</span></h5>
+                                    <p>Number of hostels associated</p>
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+                <!-- End row -->
+            </div>
+            <!-- End container -->
+        </section>
+        <!-- END STATISTIC-3 -->
+
+    
+ --}}
+
+
+
+        <!-- TESTIMONIALS-3
+			============================================= -->
+        <section id="reviews-3" class="reviews-3 bg-lightgrey wide-100 reviews-section division">
+            <div class="container">
+
+
+                <!-- SECTION TITLE -->
+                <div class="row">
+                    <div class="col-lg-10 offset-lg-1">
+                        <div class="section-title mb-50">
+
+                            <!-- Title 	-->
+                            <h3 class="h3-md">What Customers Say About Treko</h3>
+
+                            <!-- Text -->
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- TESTIMONIALS CONTENT -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="owl-carousel owl-theme reviews-wrapper">
+
+
+                            <!-- TESTIMONIAL #1 -->
+                            <div class="review-3">
+
+                                <!-- App Rating -->
+                                <div class="app-rating yellow-color">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+
+                                <!-- Title -->
+                                <h6 class="h6-lg">An awesome bridge!</h6>
+
+                                <!-- Testimonial Text -->
+                                <div class="review-3-txt">
+
+                                    <!-- Text -->
+                                    <p>Occuman although a startup ; is too good with it's services. The trust which it creates between the landlord and tenant is just awesome.</address>.
+                                    </p>
+
+                                    <!-- Testimonial Author -->
+                                    <h6 class="h6-xs">Aditya Kamat</h6>
+                                    <span>NIT Bhopal, Mechanical engineering student of third year</span>
+
+                                </div>
+
+                            </div>
+                            <!-- END TESTIMONIAL #1 -->
+
+
+                            <!-- TESTIMONIAL #2 -->
+                            <div class="review-3">
+
+                                <!-- App Rating -->
+                                <div class="app-rating yellow-color">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+
+                                <!-- Title -->
+                                <h6 class="h6-lg">Simple and Useful!</h6>
+
+                                <!-- Testimonial Text -->
+                                <div class="review-3-txt">
+
+                                    <!-- Text -->
+                                    <p>Occuman is a startup run by 3 young champs of engineering. Providing connectivity service between tenant and landlord, they are offering the best services I have ever seen in this field. All though there are some minor
+                                        bugs present in the product, which I hope will be corrected in the coming future.
+                                    </p>
+
+                                    <!-- Testimonial Author -->
+                                    <h6 class="h6-xs">Aniket Niranjan Mishra.</h6>
+                                    <span>IIT Kharagpur, Fifth year dual degree student, Incoming summer Intern at American express</span>
+
+                                </div>
+
+                            </div>
+                            <!-- END TESTIMONIAL #2 -->
+
+
+                            <!-- TESTIMONIAL #3 -->
+                            <div class="review-3">
+
+                                <!-- App Rating -->
+                                <div class="app-rating yellow-color">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+
+                                <!-- Title -->
+                                <h6 class="h6-lg">Fast, Easy and Free!</h6>
+
+                                <!-- Testimonial Text -->
+                                <div class="review-3-txt">
+
+                                    <!-- Text -->
+                                    <p>The product is unique in its field, hoping for good future growth.
+                                    </p>
+
+                                    <!-- Testimonial Author -->
+                                    <h6 class="h6-xs">Kshitij Neekhra</h6>
+                                    <span>NIT Bhopal, Mechanical engineering student of fourth year</span>
+
+                                </div>
+
+                            </div>
+                            <!-- END TESTIMONIAL #3 -->
+
+
+                            <!-- TESTIMONIAL #4 -->
+                            <div class="review-3">
+
+                                <!-- App Rating -->
+                                <div class="app-rating yellow-color">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+
+                                <!-- Title -->
+                                <h6 class="h6-lg">Amazing Experience!</h6>
+
+                                <!-- Testimonial Text -->
+                                <div class="review-3-txt">
+
+                                    <!-- Text -->
+                                    <p>I personally used the product for 2 weeks,the experience was great.The transparency which it has created between the tenant and landlord is great.
+                                    </p>
+
+                                    <!-- Testimonial Author -->
+                                    <h6 class="h6-xs">Shvesh Kumar Mishra</h6>
+                                    <span>SBI Bank Manager, Owner of several properties</span>
+
+                                </div>
+
+                            </div>
+                            <!-- END TESTIMONIAL #4 -->
+
+
+                            <!-- TESTIMONIAL #5 -->
+                            <div class="review-3">
+
+                                <!-- App Rating -->
+                                <div class="app-rating yellow-color">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+
+                                <!-- Title -->
+                                <h6 class="h6-lg">Exactly What I Needed!</h6>
+
+                                <!-- Testimonial Text -->
+                                <div class="review-3-txt">
+
+                                    <!-- Text -->
+                                    <p>Occuman is to the point product which is helpful for the development of transparency between landlord and tenants.</p>
+                                    
+
+                                    <!-- Testimonial Author -->
+                                    <h6 class="h6-xs">John Sweet</h6>
+                                    <span>Web Developer, Brightin</span>
+
+                                </div>
+
+                            </div>
+                            <!-- END TESTIMONIAL #5 -->
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+                <!-- END TESTIMONIALS CONTENT -->
+
+
+            </div>
+            <!-- End container -->
+        </section>
+        <!-- END TESTIMONIALS-3 -->
+
+
+        <!-- PAGE HERO
+			============================================= -->
+        <section id="team-page team" class="page-hero-section bg-lightgrey tra-lines division" style="background:#44354a">
+            <div class="container">
+
+
+                <!-- PAGE HERO TEXT -->
+                <div class="row" >
+                    <div class="col-md-10 col-lg-8 offset-md-1 offset-lg-2">
+                        <div class="hero-txt text-center">
+
+                            <!-- Title -->
+                            <h3 class="h3-md" style="color:white;">Meet Our Creative Team</h3>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- END PAGE HERO TEXT -->
+
+
+            </div>
+            <!-- End container -->
+        </section>
+        <!-- END PAGE HERO -->
+        <section id="team-1" class="team-1 wide-60 reviews-section division text-center align-items-center">
+            <div class="container ">
+
+
+                <!-- TEAM-1 WRAPPER -->
+                <div class="team-1-wrapper text-center">
+                    <div class="row">
+
+
+                        <!-- TEAM MEMBER #1 -->
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="team-member">
+
+                                <!-- Team Member Photo -->
+                                <div class="team-member-photo">
+
+                                    <img class="img-fluid" src="/frontasset/images/Aditya.jpeg" alt="team-member-foto">
+
+                                    <!-- Social Icons -->
+                                    <div class="tm-social clearfix">
+                                        <ul class="text-center clearfix">
+                                            <li><a href="#" class="ico-facebook"><i class="fab fa-facebook-f"></i></a></li>
+                                            <li><a href="#" class="ico-twitter"><i class="fab fa-twitter"></i></a></li>
+                                            <li><a href="#" class="ico-linkedin"><i class="fab fa-linkedin-in"></i></a></li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+
+                                <!-- Team Member Meta -->
+                                <div class="tm-meta">
+                                    <h5 class="h5-xs">Aditya Niranjan Mishra</h5>
+                                    <span class="steelgrey-color">CEO & Co-Founder</span>
+                                    <a href="mailto:aditya.mishra6752@gmail.com" class="steelgrey-color">aditya.mishra6752@gmail.com</a>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                        <!-- TEAM MEMBER #2 -->
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="team-member">
+
+                                <!-- Team Member Photo -->
+                                <div class="team-member-photo">
+
+                                    <img class="img-fluid" src="/frontasset/images/Nilesh.jpeg" alt="team-member-foto">
+
+                                    <!-- Social Icons -->
+                                    <div class="tm-social clearfix">
+                                        <ul class="text-center clearfix">
+                                            <li><a href="#" class="ico-facebook"><i class="fab fa-facebook-f"></i></a></li>
+                                            <li><a href="#" class="ico-twitter"><i class="fab fa-twitter"></i></a></li>
+                                            <li><a href="#" class="ico-instagram"><i class="fab fa-instagram"></i></a></li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+
+                                <!-- Team Member Meta -->
+                                <div class="tm-meta">
+                                    <h5 class="h5-xs">Nilesh Singh</h5>
+                                    <span class="steelgrey-color">Co-Founder and CTO</span>
+                                    <a href="mailto:nileshsomvansi@gmail.com" class="steelgrey-color">nileshsomvansi@gmail.com</a>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- TEAM MEMBER #2 -->
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="team-member">
+
+                                <!-- Team Member Photo -->
+                                <div class="team-member-photo">
+
+                                    <img class="img-fluid" src="/frontasset/images/Aadarsh.jpg" alt="team-member-foto">
+
+                                    <!-- Social Icons -->
+                                    <div class="tm-social clearfix">
+                                        <ul class="text-center clearfix">
+                                            <li><a href="#" class="ico-facebook"><i class="fab fa-facebook-f"></i></a></li>
+                                            <li><a href="#" class="ico-twitter"><i class="fab fa-twitter"></i></a></li>
+                                            <li><a href="#" class="ico-instagram"><i class="fab fa-instagram"></i></a></li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+
+                                <!-- Team Member -->
+                                <div class="tm-meta">
+                                    <h5 class="h5-xs">Adarsh Upadhyay</h5>
+                                    <span class="steelgrey-color">Co-Founder </span>
+                                    <a href="mailto:adarshom1997@outlook.com" class="steelgrey-color">adarshom1997@outlook.com</a>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- END TEAM-1 WRAPPER -->
+
+
+            </div>
+            <!-- End container -->
+        </section>
+        <!-- END TEAM-1 -->
+        <!-- SERVICES-3
+	
+
+
+         FAQs-1
+			============================================= -->
+        <section id="faqs-1" class="faqs-1 wide-100 faqs-section division">
+            <div class="container">
+
+
+                <!-- SECTION TITLE -->
+                <div class="row">
+                    <div class="col-lg-10 offset-lg-1">
+                        <div class="section-title mb-60 text-center">
+
+                            <!-- Title 	-->
+                            <h3 class="h3-md">Have Questions? Look Here.</h3>
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- FAQs-1 QUESTIONS -->
+                <div class="faqs-1-questions pc-15">
+                    <div class="row">
+
+
+                        <!-- QUESTIONS WRAPPER -->
+                        <div class="col-lg-6">
+                            <div class="questions-wrapper pc-30">
+
+
+                                <!-- QUESTION #1 -->
+                                <div class="question">
+
+                                    <!-- Question -->
+                                    <h5 class="h5-xs"><span>1.</span> Getting started with Occuman</h5>
+
+                                    <!-- Answer -->
+                                    <p class="p-md grey-color">On the top of website one demo video is attached on how the site works.You will get a brief idea on how the site works and what are the specifications of the module.
+                                    </p>
+
+                                </div>
+
+
+                                <!-- QUESTION #2 -->
+                                <div class="question">
+
+                                    <!-- Question -->
+                                    <h5 class="h5-xs"><span>2.</span> Do you have a free trial?</h5>
+
+                                    <!-- Answer -->
+                                    <p class="p-md grey-color">The platform is completely free for everyone, every function is in working stage.
+                                    </p>
+
+                                </div>
+
+
+                                <!-- QUESTION #3 -->
+                                <div class="question">
+
+                                    <!-- Question -->
+                                    <h5 class="h5-xs"><span>3.</span> How to sign up for a Treko account?</h5>
+
+                                    <!-- Answer -->
+                                    <p class="p-md grey-color">On the top right corner a button is placed named - "SignUp/Login". Click it, you will be redirected to the target page.
+                                    </p>
+
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <!-- END QUESTIONS WRAPPER -->
+
+
+                        <!-- QUESTIONS WRAPPER -->
+                        <div class="col-lg-6">
+                            <div class="questions-wrapper pc-30">
+
+
+                                <!-- QUESTION #4 -->
+                                <div class="question">
+
+                                    <!-- Question -->
+                                    <h5 class="h5-xs"><span>4.</span> How to manage my account?</h5>
+
+                                    <!-- Answer -->
+                                    <p class="p-md grey-color">On the top of website one demo video is attached on how the site works, try to use that.
+                                    </p>
+
+                                </div>
+
+
+                                <!-- QUESTION #5 -->
+                                <div class="question">
+
+                                    <!-- Question -->
+                                    <h5 class="h5-xs"><span>5.</span> I have an issue with my account</h5>
+
+                                    <!-- Answer -->
+                                    <p class="p-md grey-color">On the top of website one demo video is attached on how the site works, try to use that. If query not solved then please drop the mail. We will be most happy to help you.
+                                    </p>
+
+                                </div>
+
+
+                                <!-- QUESTION #6 -->
+                                <div class="question">
+
+                                    <!-- Question -->
+                                    <h5 class="h5-xs"><span>6.</span> Can I use Treko in my language?</h5>
+
+                                    <!-- Answer -->
+                                    <p class="p-md grey-color">For the time being, the site is working mainly in English version. In coming days our plans is to extend the functionality in various other languages.
+                                    </p>
+
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <!-- END QUESTIONS WRAPPER -->
+
+
+                    </div>
+                    <!-- End row -->
+                </div>
+                <!-- END FAQs-1 QUESTIONS -->
+
+
+                <!-- MORE QUESTIONS BUTTON -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="more-questions-btn text-center">
+                            <a href="#" class="btn btn-md btn-primary tra-primary-hover">Still Have A Question?</a>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <!-- End container -->
+        </section>
+        <!-- END FAQs-1 -->
+
+
+
+
+
+        <!-- CONTACTS-2
+			============================================= -->
+        <section id="contacts-2" class="contacts-2 bg-lightgrey wide-80 contacts-section division">
+            <div class="container">
+
+
+                <!-- SECTION TITLE -->
+                <div class="row">
+                    <div class="col-lg-10 offset-lg-1">
+                        <div class="section-title mb-60 text-center">
+
+                            <!-- Title 	-->
+                            <h3 class="h3-md">Have Questions or Need Help?</h3>
+
+
+                            <!-- Text -->
+
+                            <p class="p-lg">Feel free to contact us 24 * 7. Expect a positive reply within 2 hours.
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- CONTACT FORM -->
+                <div class="row">
+                    <div class="col-md-10 col-xl-8 offset-md-1 offset-xl-2">
+                        <div class="form-wrapper">
+                            <form name="contactform" class="row contact-form">
+
+                                <!-- Form Input -->
+                                <div class="col-lg-6">
+                                    <input type="text" name="name" class="form-control name" placeholder="Your Name*">
+                                </div>
+
+                                <!-- Form Input -->
+                                <div class="col-lg-6">
+                                    <input type="email" name="email" class="form-control email" placeholder="Email Address*">
+                                </div>
+
+                                <!-- Form Select -->
+                                <div class="col-md-12">
+                                    <select id="inlineFormCustomSelect1" name="subject" class="custom-select subject">
+					                        <option>This question is about...</option>  
+					                      	<option>Registering/Authorising</option>
+					                      	<option>Using Treko</option>
+					                      	<option>Troubleshooting</option>
+					                      	<option>Backup/Restore</option>
+					                      	<option>Other</option>
+					                    </select>
+                                </div>
+
+                                <!-- Form Textarea -->
+                                <div class="col-md-12">
+                                    <textarea name="message" class="form-control message" rows="6" placeholder="Your Message ..."></textarea>
+                                </div>
+
+                                <!-- Form Button -->
+                                <div class="col-md-12 mt-5 text-right">
+                                    <button type="submit" class="btn btn-md btn-primary tra-primary-hover submit">Send Message</button>
+                                </div>
+
+                                <!-- Form Message -->
+                                <div class="col-md-12 contact-form-msg text-center">
+                                    <div class="sending-msg"><span class="loading"></span></div>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- END CONTACT FORM -->
+
+
+            </div>
+            <!-- End container -->
+        </section>
+        <!-- END CONTACTS-2 -->
+
+
+
+
+        <!-- FOOTER-1
+			============================================= -->
+        <footer id="footer-1" class="footer division">
+            <div class="container">
+
+                <!-- FOOTER CONTENT -->
+                <div class="row">
+                    <!-- FOOTER INFO -->
+                    <div class="col-lg-5 col-xl-4">
+                        <div class="footer-info mb-40">
+
+                            <!-- Footer Logo -->
+                            <!-- For Retina Ready displays take a image with double the amount of pixels that your image will be 
+								displayed (e.g 350 x 82  pixels) -->
+                            <img src="/frontasset/images/final-logo.png" width="175" height="41" alt="footer-logo">
+
+                            
+                            <!-- Footer Contacts -->
+                            <div class="footer-contacts grey-color mt-15">
+
+                                <!-- Email -->
+                                <p class="foo-email">E: <a href="mailto:occumanrating@gmail.com">ocuumanrating@gmail.com</a></p>
+
+                                <!-- Phone -->
+                                <p class="grey-color">P: +91 8824893907</p>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <!-- FOOTER LINKS -->
+                    <div class="col-md-4 col-lg-2 col-xl-2 offset-xl-2">
+                        <div class="footer-links mb-40">
+
+                            <!-- Title -->
+                            <h6 class="h6-lg">Company</h6>
+
+                            <!-- Footer Links -->
+                            <ul class="clearfix grey-color">
+                                <li>
+                                    <p><a href="#">About Us</a></p>
+                                </li>
+                                <li>
+                                    <p><a href="#">Careers</a></p>
+                                </li>
+                                <li>
+                                    <p><a href="#">Press & Media</a></p>
+                                </li>
+                                <li>
+                                    <p><a href="#">Our Pricing</a></p>
+                                </li>
+                                <li>
+                                    <p><a href="#">Advertising</a></p>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+
+
+                    <!-- FOOTER LINKS -->
+                    <div class="col-md-4 col-lg-2">
+                        <div class="footer-links mb-40">
+
+                            <!-- Title -->
+                            <h6 class="h6-lg">Support</h6>
+
+                            <!-- Footer List -->
+                            <ul class="clearfix grey-color">
+                                <li>
+                                    <p><a href="#">FAQs</a></p>
+                                </li>
+                                <li>
+                                    <p><a href="#">Editor Help</a></p>
+                                </li>
+                                <li>
+                                    <p><a href="#">Community</a></p>
+                                </li>
+                                <li>
+                                    <p><a href="#">Life Chatting</a></p>
+                                </li>
+                                <li>
+                                    <p><a href="#">Contact Us</a></p>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+
+
+                    <!-- FOOTER LINKS -->
+                    <div class="col-md-3 col-lg-3 col-xl-2">
+                        <div class="footer-links mb-40">
+
+                            <!-- Title -->
+                            <h6 class="h6-lg">Legal</h6>
+
+                            <!-- Footer List -->
+                            <ul class="clearfix grey-color">
+                                <li>
+                                    <p><a href="#">License Agreement</a></p>
+                                </li>
+                                <li>
+                                    <p><a href="#">Terms of Use</a></p>
+                                </li>
+                                <li>
+                                    <p><a href="#">Privacy Policy</a></p>
+                                </li>
+                                <li>
+                                    <p><a href="#">Cookie Policy</a></p>
+                                </li>
+                                <li>
+                                    <p><a href="#">Site Map</a></p>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+
+
+                </div>
+                <!-- END FOOTER CONTENT -->
+
+
+                <!-- BOTTOM FOOTER -->
+                <div class="bottom-footer grey-color">
+                    <div class="row d-flex align-items-center">
+
+
+                        <!-- FOOTER COPYRIGHT -->
+                        <div class="col-md-6">
+                            <div class="footer-copyright">
+                                <p>&copy; 2020-2022 Occuman. All Rights Reserved</p>
+                            </div>
+                        </div>
+
+
+                        <!-- BOTTOM FOOTER LINKS -->
+                        <div class="col-md-6">
+                            <ul class="bottom-footer-list text-right clearfix">
+                                <li>
+                                    <p class="first-list-link"><a href="#">Facebook</a></p>
+                                </li>
+                                <li>
+                                    <p><a href="#">Twitter</a></p>
+                                </li>
+                                <li>
+                                    <p><a href="#">LinkedIn</a></p>
+                                </li>
+                                <li>
+                                    <p class="last-li"><a href="#">Dribbble</a></p>
+                                </li>
+                            </ul>
+                        </div>
+
+
+                    </div>
+                    <!-- End row -->
+                </div>
+                <!-- END BOTTOM FOOTER -->
+
+
+            </div>
+            <!-- End container -->
+        </footer>
+        <!-- END FOOTER-1 -->
+
+
+
+
+    </div>
+    <!-- END PAGE CONTENT -->
+
+
+
+
+    <!-- EXTERNAL SCRIPTS
+		============================================= -->
+    <script src="/frontasset/js/jquery-3.4.1.min.js"></script>
+    <script src="/frontasset/js/bootstrap.min.js"></script>
+    <script src="/frontasset/js/modernizr.custom.js"></script>
+    <script src="/frontasset/js/jquery.easing.js"></script>
+    <script src="/frontasset/js/jquery.appear.js"></script>
+    <script src="/frontasset/js/jquery.scrollto.js"></script>
+    <script src="/frontasset/js/menu.js"></script>
+    <script src="/frontasset/js/owl.carousel.min.js"></script>
+    <script src="/frontasset/js/jquery.magnific-popup.min.js"></script>
+    <script src="/frontasset/js/contact-form.js"></script>
+    <script src="/frontasset/js/register-form.js"></script>
+    <script src="/frontasset/js/request-form.js"></script>
+    <script src="/frontasset/js/comment-form.js"></script>
+    <script src="/frontasset/js/jquery.validate.min.js"></script>
+    <script src="/frontasset/js/jquery.ajaxchimp.min.js"></script>
+    <script src="/frontasset/js/wow.js"></script>
+
+    <!-- Custom Script -->
+    <script src="/frontasset/js/custom.js"></script>
+
+    <script>
+        new WOW().init();
+    </script>
+
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+    <!-- [if lt IE 9]>
+			<script src="js/html5shiv.js" type="text/javascript"></script>
+			<script src="js/respond.min.js" type="text/javascript"></script>
+		<![endif] -->
+
+    <!-- Google Analytics: Change UA-XXXXX-X to be your site's ID. Go to http://www.google.com/analytics/ for more information. -->
+    <!--
+		<script>
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-XXXXX-X']);
+			_gaq.push(['_trackPageview']);
+
+			(function() {
+				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
+		</script>
+		-->
+
+
+    <script src="/frontasset/js/changer.js"></script>
+    <script defer src="/frontasset/js/styleswitch.js"></script>
+
+
+</body>
+
 </html>

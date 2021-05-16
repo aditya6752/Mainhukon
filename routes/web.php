@@ -17,7 +17,7 @@ use App\Http\Controllers\AdminController;
 */
 
 Route::get('/', function () {
-    return redirect('/login');
+    return view('welcome');
 });
 
 Route::get('/csstesting', function () {
@@ -27,7 +27,7 @@ Route::get('/landlord', function () {
     return view('landlord');
 });
 Route::get('/property',[PropertyController::class, 'getthenumber'])->middleware(['auth'])->name('post.getnumber');
-Route::get('/dashboard',[PropertyController::class, 'dashboard'])->middleware(['auth'])->name('dashboard');
+Route::get('/dashboard',[PropertyController::class, 'dashboard'])->middleware(['verified'])->name('dashboard');
 Route::get('/myproperties',[PropertyController::class, 'landlordlanding'])->middleware(['auth'])->name('landlord.dashboard');
 Route::get('/editpropertydetail/{PID}',[PropertyController::class, 'editpropertydetails'])->middleware(['auth'])->name('landlord.editproperty');
 Route::post('/update/{id}',[PropertyController::class, 'updatepropertydetails'])->middleware(['auth'])->name('landlord.updateproperty');
@@ -42,7 +42,8 @@ Route::post('/addtenantdetail/{id}',[TenantController::class, 'storetenant'])->m
 Route::post('/reviewtenant/{id}',[TenantController::class, 'storereview'])->middleware(['auth'])->name('landlord.tenantsreview');
 Route::get('/tenantpage',[TenantController::class, 'tenant'])->middleware(['auth'])->name('landlord.editproperty');
 Route::get('/admin/register',[AdminController::class, 'adminregister']);
-
+Route::get('/verified/{landlord_username}/{pid}/{d}/{m}/{y}',[TenantController::class, 'savetenantdetail'])->middleware(['auth']);
+Route::get('/verified/{landlord_username}/{pid}/{start_date}',[TenantController::class, 'savetenantdetails'])->middleware(['auth']);
 
 Route::post('/admin/store',[AdminController::class, 'store'])
                 ->middleware(['guest'])
@@ -54,3 +55,5 @@ require __DIR__.'/auth.php';
 Route::group( ['middleware'=> ['auth','admin'] ],function () {
     require __DIR__.'/admin-panel.php';
 });
+
+Route::get('/mail', [TenantController::class , 'confirmation']);
